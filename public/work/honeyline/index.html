@@ -2,7 +2,7 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>HoneyLine packing line | Virtualine</title>
 <meta name="description" content="HoneyLine: a complete honey-jar packing line simulated live, from case erector to stretch wrapper, with a real-time line HMI.">
 <link rel="canonical" href="https://virtualine.co.uk/work/honeyline/">
@@ -11,12 +11,14 @@
 <meta property="og:image" content="https://virtualine.co.uk/img/film-hl.webp">
 <meta property="og:url" content="https://virtualine.co.uk/work/honeyline/">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0f1013">
 <link rel="icon" href="/img/favicon.png" type="image/png">
+<link rel="preload" as="image" href="/img/film-hl.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -28,87 +30,151 @@
       <a href="/work/" aria-current="page">Our work</a>
       <a href="/process/">How it works</a>
       <a href="/faq/">FAQ</a>
-      <a href="/contact/">Contact</a>
+      <a href="/contact/" class="gnav__cta">Book a demo</a>
     </nav>
     <button class="gnav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   </div>
 </header>
-<div class="lnav">
-  <div class="lnav__in">
-    <span class="lnav__title">HoneyLine</span>
-    <nav class="lnav__links" aria-label="On this page"><a href="#line">The line</a><a href="#machines">Machines</a><a href="#hmi">HMI</a></nav>
-    <a class="btn btn--sm" href="/contact/">Book a demo</a>
-  </div>
-</div>
 <main id="main">
-<section class="stage dark ">
-  <div class="stage__copy">
-    
-    <h1 class="display">HoneyLine.</h1>
-    <p class="intro">A complete packing line, live. Honey jars come in at one end and leave as a wrapped pallet. Every machine moves, every box is tracked, and the line screen updates counts, speeds and status in real time.</p>
-    
+<section class="hero" data-hero>
+  <div class="hero__media"><img src="/img/film-hl.webp" alt="Honey jars travelling along the HoneyLine infeed conveyor" width="1400" height="788" fetchpriority="high"></div>
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="wrap hero__copy">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/work/">Our work</a> <span aria-hidden="true">/</span> <a href="/work/honeyline/">HoneyLine</a></nav>
+    <h1 class="hero__title"><span class="ln"><span>HoneyLine.</span></span></h1>
+    <p class="hero__intro">Honey jars go in at one end and come out as a wrapped pallet. Every machine moves, every box is tracked, and the line screen updates in real time.</p>
+    <div class="actions"><a class="link" href="#walk">Walk the line<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
-  <figure class="stage__media"><img src="/img/film-hl.webp" alt="Honey jars travelling along the HoneyLine infeed conveyor" width="1400" height="788"></figure>
+  <div class="hero__cue" aria-hidden="true"><span></span>Scroll</div>
 </section>
-<section class="block light" id="line">
+<section class="walk" id="walk" data-walk style="--n:8">
+  <div class="walk__stage">
+    <div class="walk__imgs">
+      <img class="walk__img is-on" src="/img/case-erector.webp" alt="Case erector folding a blank into a case" loading="eager" width="1400" height="788">
+      <img class="walk__img" src="/img/partition.webp" alt="Partition inserter placing dividers into cases" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/pad.webp" alt="Top-load case packer placing jars" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/film-hl.webp" alt="Honey jars travelling along the infeed conveyor" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/sealer.webp" alt="Blue case sealer taping cases shut" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/checkweigher.webp" alt="Checkweigher screen accepting a case" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/robot.webp" alt="Palletising robot building a pallet" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/wrapper.webp" alt="Stretch wrapper with a finished pallet" loading="lazy" width="1400" height="788">
+    </div>
+    <div class="walk__shade" aria-hidden="true"></div>
+    <div class="wrap walk__copy">
+      <h2 class="walk__heading">Eight machines. One line.</h2>
+      <p class="walk__count" aria-hidden="true"><span class="walk__num">01</span><span class="walk__of">/ 08</span></p>
+      <ol class="walk__steps">
+        <li class="walk__step is-on"><h3>Case erector</h3><p>Flat blanks fold into open cases and drop onto the line.</p></li>
+        <li class="walk__step"><h3>Partition inserter</h3><p>Dividers drop in so the jars never touch.</p></li>
+        <li class="walk__step"><h3>Case packer</h3><p>Jars are picked from the conveyor and placed from above.</p></li>
+        <li class="walk__step"><h3>Pad inserter</h3><p>A top pad goes in over the jars before the case closes.</p></li>
+        <li class="walk__step"><h3>Case sealer</h3><p>Flaps fold down and tape seals the top.</p></li>
+        <li class="walk__step"><h3>Checkweigher</h3><p>Every case is weighed, then accepted or rejected.</p></li>
+        <li class="walk__step"><h3>Palletiser</h3><p>The robot picks, places and adds a tier sheet, layer by layer.</p></li>
+        <li class="walk__step"><h3>Stretch wrapper</h3><p>The finished pallet is wrapped and ready to ship.</p></li>
+      </ol>
+    </div>
+    <div class="wrap walk__nav"><div class="walk__ticks"><button class="walk__tick is-on" data-i="0" aria-label="Machine 1: Case erector"><span>01</span></button><button class="walk__tick" data-i="1" aria-label="Machine 2: Partition inserter"><span>02</span></button><button class="walk__tick" data-i="2" aria-label="Machine 3: Case packer"><span>03</span></button><button class="walk__tick" data-i="3" aria-label="Machine 4: Pad inserter"><span>04</span></button><button class="walk__tick" data-i="4" aria-label="Machine 5: Case sealer"><span>05</span></button><button class="walk__tick" data-i="5" aria-label="Machine 6: Checkweigher"><span>06</span></button><button class="walk__tick" data-i="6" aria-label="Machine 7: Palletiser"><span>07</span></button><button class="walk__tick" data-i="7" aria-label="Machine 8: Stretch wrapper"><span>08</span></button></div><div class="walk__bar"><span></span></div></div>
+  </div>
+</section>
+<section class="block hmisec" id="hmi">
+  <div class="wrap hmisec__head">
+    <h2 class="h2">Run the line yourself.</h2>
+    <p class="body">This is the HoneyLine control screen, running live in your browser. Tap any machine to stop it, and watch the line back up behind it.</p>
+  </div>
   <div class="wrap">
-    <h2 class="h2">The line, start to finish.</h2>
-    <ol class="flow">
-      <li>Case erector</li><li>Partition inserter</li><li>Case packer</li><li>Pad inserter</li>
-      <li>Case sealer</li><li>Checkweigher and labeller</li><li>Palletiser</li><li>Stretch wrapper</li>
-    </ol>
+    <div class="hmi" data-hmi>
+      <div class="hmi__bar"><span class="hmi__brand">HONEY LINE <i>|</i> END OF LINE</span><span class="hmi__clock">--:--:--</span><span class="hmi__mode" data-mode>AUTO RUN</span></div>
+      <div class="hmi__line">
+        <button class="hmi__m" data-m="0" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Case erector</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="1" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Partition</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="2" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Case packer</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="3" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Pad inserter</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="4" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Case sealer</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="5" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Checkweigher</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="6" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Palletiser</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="7" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Wrapper</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+      </div>
+      <div class="hmi__kpis">
+        <div><span class="hmi__k">Cases / min</span><span class="hmi__v" data-k="rate">0.0</span><span class="hmi__spark"><span data-k="ratebar"></span></span></div>
+        <div><span class="hmi__k">OEE</span><span class="hmi__v" data-k="oee">0.0 %</span><span class="hmi__spark"><span data-k="oeebar"></span></span></div>
+        <div><span class="hmi__k">Cases packed</span><span class="hmi__v" data-k="cases">0</span></div>
+        <div><span class="hmi__k">Pallets wrapped</span><span class="hmi__v" data-k="pallets">0</span></div>
+      </div>
+      <div class="hmi__foot"><span class="hmi__alarm" data-k="alarm" role="status" aria-live="polite">No active alarms · All guards closed · Air 6.1 bar</span><button class="hmi__reset" data-reset>Reset line</button></div>
+    </div>
   </div>
 </section>
-<section class="block light" id="machines">
-  <div class="wrap"><h2 class="h2">Take a closer look.</h2></div>
-  <div class="rail" tabindex="0" aria-label="Take a closer look., scroll sideways for more">
-    <ul class="rail__track">
-      <li class="rail__item"><img src="/img/case-erector.webp" alt="Case erector folding a flat blank into a case" loading="lazy" width="1400" height="788"><p><strong>Case erector.</strong> Flat blanks become open cases.</p></li>
-      <li class="rail__item"><img src="/img/partition.webp" alt="Partition inserter dropping dividers into cases" loading="lazy" width="1400" height="788"><p><strong>Partition inserter.</strong> Dividers drop in so jars can’t touch.</p></li>
-      <li class="rail__item"><img src="/img/pad.webp" alt="Top-load case packer placing jars" loading="lazy" width="1400" height="788"><p><strong>Case packer.</strong> Jars are picked and placed from above.</p></li>
-      <li class="rail__item"><img src="/img/sealer.webp" alt="Blue case sealer taping the case shut" loading="lazy" width="1400" height="788"><p><strong>Case sealer.</strong> Flaps fold and tape seals the top.</p></li>
-      <li class="rail__item"><img src="/img/checkweigher.webp" alt="Checkweigher screen accepting a sealed case" loading="lazy" width="1400" height="788"><p><strong>Checkweigher.</strong> Every case is weighed, accepted or rejected.</p></li>
-      <li class="rail__item"><img src="/img/robot.webp" alt="Robot running pick, place and tier sheet" loading="lazy" width="1400" height="788"><p><strong>Palletiser.</strong> The robot builds the pallet, tier by tier.</p></li>
-      <li class="rail__item"><img src="/img/wrapper.webp" alt="Stretch wrapper with a finished pallet" loading="lazy" width="1400" height="788"><p><strong>Stretch wrapper.</strong> The finished pallet is wrapped and ready.</p></li>
-    </ul>
-  </div>
-  <div class="wrap rail__ctrl"><button class="rbtn" data-dir="-1" aria-label="Previous">‹</button><button class="rbtn" data-dir="1" aria-label="Next">›</button></div>
+<section class="block"><div class="wrap points"><div><h3>Made for</h3><p>Packaging machinery builders, food and drink producers, and robot and palletising integrators.</p></div><div><h3>Every box tracked</h3><p>Each case is followed from blank to pallet, with counts on the line screen.</p></div><div><h3>VR ready</h3><p>Walk the line in a headset, on a laptop or with a game controller.</p></div></div></section>
+<section class="block nextup">
+  <div class="wrap"><a class="nextup__card" href="/work/pw-600/"><img src="/img/pw600.webp" alt="" loading="lazy" width="1400" height="788"><span class="nextup__txt"><span class="nextup__label">Next showcase</span><span class="nextup__title">PW-600 parts washer<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></div>
 </section>
-<section class="block dark" id="hmi">
-  <div class="wrap duo">
-    <div class="duo__txt"><h2 class="h2">A line screen that actually runs.</h2><p class="body">The HMI shows live counts, speeds and the status of every machine. Stop one and watch the line react.</p>
-      <p class="body muted">Made for packaging machinery builders, food and drink producers, and robot and palletising integrators.</p></div>
-    <figure class="duo__img"><img src="/img/hmi.webp" alt="Live HoneyLine HMI showing counts and machine status" loading="lazy" width="1400" height="788"></figure>
-  </div>
-</section>
-<section class="block light nextup">
-  <div class="wrap">
-    <a class="nextup__card" href="/work/pw-600/">
-      <img src="/img/pw600.webp" alt="" loading="lazy" width="1400" height="788">
-      <span class="nextup__txt"><span class="nextup__label">Next showcase</span><span class="nextup__title">PW-600 parts washer<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
-    </a>
-  </div>
-</section>
-<section class="block closing mist">
+<section class="block closing">
+  <div class="closing__glow" aria-hidden="true"></div>
   <div class="wrap center">
-    <h2 class="display display--md">Got a show coming up?</h2>
-    <p class="intro">Tell us about your machine and the date. We reply within one working day.</p>
-    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="mailto:sales@virtualine.co.uk">Email sales<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <h2 class="display">Got a show coming up?</h2>
+    <p class="body">Tell us about your machine and the date. We reply within one working day.</p>
+    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="/work/">See our work<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
 </section>
 
 </main>
 <footer class="foot">
-  <div class="foot__in">
-    <div class="foot__cols">
-      <div><h2>Explore</h2><a href="/services/">What we do</a><a href="/work/">Our work</a><a href="/process/">How it works</a></div>
-      <div><h2>Showcases</h2><a href="/work/honeyline/">HoneyLine packing line</a><a href="/work/pw-600/">PW-600 parts washer</a></div>
-      <div><h2>Help</h2><a href="/faq/">FAQ</a><a href="/contact/">Book a demo</a></div>
-      <div><h2>Email us</h2><a href="mailto:sales@virtualine.co.uk">sales@virtualine.co.uk</a><a href="mailto:tech@virtualine.co.uk">tech@virtualine.co.uk</a></div>
-    </div>
-    <p class="foot__legal">Copyright © <span id="year">2026</span> Virtualine. Digital twins, VR and factory films, built in the UK.</p>
+  <div class="wrap foot__top">
+    <p class="foot__big">Play the film.<br>Hand them the controller.</p>
+    <a class="btn" href="/contact/">Book a demo</a>
   </div>
+  <div class="wrap foot__cols">
+    <div><h2>Explore</h2><a href="/services/">What we do</a><a href="/work/">Our work</a><a href="/process/">How it works</a></div>
+    <div><h2>Showcases</h2><a href="/work/honeyline/">HoneyLine packing line</a><a href="/work/pw-600/">PW-600 parts washer</a></div>
+    <div><h2>Help</h2><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></div>
+    <div><h2>Email</h2><a href="mailto:sales@virtualine.co.uk">sales@virtualine.co.uk</a><a href="mailto:tech@virtualine.co.uk">tech@virtualine.co.uk</a></div>
+  </div>
+  <p class="wrap foot__legal">© <span id="year">2026</span> Virtualine. Digital twins, VR and factory films, made in the UK.</p>
 </footer>
+<script src="/vendor/gsap.min.js" defer></script>
+<script src="/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/vendor/lenis.min.js" defer></script>
 <script src="/main.js" defer></script>
 </body>
 </html>

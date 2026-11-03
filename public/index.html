@@ -2,25 +2,27 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Virtualine | Your factory, running before it’s built</title>
 <meta name="description" content="Virtualine turns your machines and production lines into interactive 3D digital twins, VR stand experiences, training simulators and cinematic films, built from real CAD.">
 <link rel="canonical" href="https://virtualine.co.uk/">
 <meta property="og:title" content="Virtualine | Your factory, running before it’s built">
 <meta property="og:description" content="Virtualine turns your machines and production lines into interactive 3D digital twins, VR stand experiences, training simulators and cinematic films, built from real CAD.">
-<meta property="og:image" content="https://virtualine.co.uk/img/hero.webp">
+<meta property="og:image" content="https://virtualine.co.uk/img/robot2.webp">
 <meta property="og:url" content="https://virtualine.co.uk/">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0f1013">
 <link rel="icon" href="/img/favicon.png" type="image/png">
+<link rel="preload" as="image" href="/img/robot2.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
-<header class="gnav gnav--sticky">
+<header class="gnav">
   <div class="gnav__in">
     <a href="/" class="gnav__brand" aria-label="Virtualine home"><img src="/img/logo.png" alt="" width="14" height="23"><span>Virtualine</span></a>
     <nav class="gnav__links" id="menu" aria-label="Main">
@@ -28,101 +30,182 @@
       <a href="/work/">Our work</a>
       <a href="/process/">How it works</a>
       <a href="/faq/">FAQ</a>
-      <a href="/contact/">Contact</a>
+      <a href="/contact/" class="gnav__cta">Book a demo</a>
     </nav>
     <button class="gnav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   </div>
 </header>
 <main id="main">
-<section class="stage dark stage--hero">
-  <div class="stage__copy">
-    <p class="kicker">Factory simulation, VR and promo films</p>
-    <h1 class="display">Your factory,<br>running before it’s built.</h1>
-    <p class="intro">We turn your machines and production lines into 3D simulations you can walk through, put on in VR, and film. All built from your real CAD.</p>
-    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="/work/">See our factories<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+<section class="hero" data-hero>
+  <div class="hero__media"><img src="/img/robot2.webp" alt="Orange palletising robot stacking honey cases inside a fenced cell" width="1400" height="788" fetchpriority="high"></div>
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="wrap hero__copy">
+    
+    <h1 class="hero__title"><span class="ln"><span>Your factory,</span></span><span class="ln"><span>running before</span></span><span class="ln"><span>it’s built.</span></span></h1>
+    <p class="hero__intro">3D simulations of your machines that buyers can walk through, wear in VR and watch on film. Built from your real CAD.</p>
+    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="#walk">Walk the line<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
-  <figure class="stage__media"><img src="/img/robot2.webp" alt="Orange palletising robot stacking honey cases inside a fenced cell" width="1400" height="788"></figure>
+  <div class="hero__cue" aria-hidden="true"><span></span>Scroll</div>
 </section>
-<section class="block light">
-  <div class="wrap narrow center">
-    <h2 class="display display--md">Your best machine can’t always be in the room.</h2>
-  </div>
-  <div class="wrap points">
-    <div><h3>It can’t come to the show.</h3><p>It’s too big, too heavy and too costly to ship, install and run on a stand.</p></div>
-    <div><h3>Visitors walk past.</h3><p>Brochures and posters don’t stop anyone. A machine that moves does.</p></div>
-    <div><h3>Buyers can’t picture it.</h3><p>A new line is hard to sell before it exists. A 2D drawing doesn’t show it working.</p></div>
-    <div><h3>Training costs downtime.</h3><p>New operators learn on live equipment, which stops production and carries risk.</p></div>
+<section class="statement" data-reveal-words>
+  <div class="wrap"><p class="statement__text"><span>Your</span> <span>best</span> <span>machine</span> <span>can’t</span> <span>always</span> <span>be</span> <span>in</span> <span>the</span> <span>room.</span> <span>It’s</span> <span>too</span> <span>big</span> <span>to</span> <span>ship,</span> <span>buyers</span> <span>can’t</span> <span>picture</span> <span>it,</span> <span>and</span> <span>training</span> <span>on</span> <span>it</span> <span>stops</span> <span>production.</span></p><p class="statement__sub">So we build it again, in 3D, from your drawings.</p></div>
+</section>
+<section class="walk" id="walk" data-walk style="--n:8">
+  <div class="walk__stage">
+    <div class="walk__imgs">
+      <img class="walk__img is-on" src="/img/case-erector.webp" alt="Case erector folding a blank into a case" loading="eager" width="1400" height="788">
+      <img class="walk__img" src="/img/partition.webp" alt="Partition inserter placing dividers into cases" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/pad.webp" alt="Top-load case packer placing jars" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/film-hl.webp" alt="Honey jars travelling along the infeed conveyor" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/sealer.webp" alt="Blue case sealer taping cases shut" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/checkweigher.webp" alt="Checkweigher screen accepting a case" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/robot.webp" alt="Palletising robot building a pallet" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/wrapper.webp" alt="Stretch wrapper with a finished pallet" loading="lazy" width="1400" height="788">
+    </div>
+    <div class="walk__shade" aria-hidden="true"></div>
+    <div class="wrap walk__copy">
+      <h2 class="walk__heading">Walk the HoneyLine.</h2>
+      <p class="walk__count" aria-hidden="true"><span class="walk__num">01</span><span class="walk__of">/ 08</span></p>
+      <ol class="walk__steps">
+        <li class="walk__step is-on"><h3>Case erector</h3><p>Flat blanks fold into open cases and drop onto the line.</p></li>
+        <li class="walk__step"><h3>Partition inserter</h3><p>Dividers drop in so the jars never touch.</p></li>
+        <li class="walk__step"><h3>Case packer</h3><p>Jars are picked from the conveyor and placed from above.</p></li>
+        <li class="walk__step"><h3>Pad inserter</h3><p>A top pad goes in over the jars before the case closes.</p></li>
+        <li class="walk__step"><h3>Case sealer</h3><p>Flaps fold down and tape seals the top.</p></li>
+        <li class="walk__step"><h3>Checkweigher</h3><p>Every case is weighed, then accepted or rejected.</p></li>
+        <li class="walk__step"><h3>Palletiser</h3><p>The robot picks, places and adds a tier sheet, layer by layer.</p></li>
+        <li class="walk__step"><h3>Stretch wrapper</h3><p>The finished pallet is wrapped and ready to ship.</p></li>
+      </ol>
+    </div>
+    <div class="wrap walk__nav"><div class="walk__ticks"><button class="walk__tick is-on" data-i="0" aria-label="Machine 1: Case erector"><span>01</span></button><button class="walk__tick" data-i="1" aria-label="Machine 2: Partition inserter"><span>02</span></button><button class="walk__tick" data-i="2" aria-label="Machine 3: Case packer"><span>03</span></button><button class="walk__tick" data-i="3" aria-label="Machine 4: Pad inserter"><span>04</span></button><button class="walk__tick" data-i="4" aria-label="Machine 5: Case sealer"><span>05</span></button><button class="walk__tick" data-i="5" aria-label="Machine 6: Checkweigher"><span>06</span></button><button class="walk__tick" data-i="6" aria-label="Machine 7: Palletiser"><span>07</span></button><button class="walk__tick" data-i="7" aria-label="Machine 8: Stretch wrapper"><span>08</span></button></div><div class="walk__bar"><span></span></div></div>
   </div>
 </section>
-
-<section class="block mist">
+<section class="block hmisec" id="hmi">
+  <div class="wrap hmisec__head">
+    <h2 class="h2">Run the line yourself.</h2>
+    <p class="body">This is the HoneyLine control screen, running live in your browser. Tap any machine to stop it, and watch the line back up behind it.</p>
+  </div>
   <div class="wrap">
-    <h2 class="h2">One model. Four ways to use it.</h2>
-    <div class="bento">
-      <a class="tile tile--wide dark" href="/services/#vr">
-        <span class="tile__txt"><span class="tile__h">VR at your stand</span><span class="tile__p">Visitors put on a headset and stand inside your running factory.</span></span>
-        <img src="/img/vr.webp" alt="" loading="lazy">
-      </a>
-      <a class="tile" href="/services/#simulation">
-        <span class="tile__txt"><span class="tile__h">Interactive simulation</span><span class="tile__p">Walk around your line and operate it.</span></span>
-        <img src="/img/hero.webp" alt="" loading="lazy">
-      </a>
-      <a class="tile" href="/services/#films">
-        <span class="tile__txt"><span class="tile__h">Promo films</span><span class="tile__p">HD films for LinkedIn, your site and stand screens.</span></span>
-        <img src="/img/film-pw.webp" alt="" loading="lazy">
-      </a>
-      <a class="tile tile--wide" href="/services/#training">
-        <span class="tile__txt"><span class="tile__h">Operator training</span><span class="tile__p">Staff learn the machine before they touch it. Mistakes cost nothing.</span></span>
-        <img src="/img/training.webp" alt="" loading="lazy">
-      </a>
+    <div class="hmi" data-hmi>
+      <div class="hmi__bar"><span class="hmi__brand">HONEY LINE <i>|</i> END OF LINE</span><span class="hmi__clock">--:--:--</span><span class="hmi__mode" data-mode>AUTO RUN</span></div>
+      <div class="hmi__line">
+        <button class="hmi__m" data-m="0" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Case erector</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="1" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Partition</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="2" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Case packer</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="3" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Pad inserter</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="4" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Case sealer</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="5" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Checkweigher</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="6" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Palletiser</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+        <button class="hmi__m" data-m="7" aria-pressed="false">
+          <span class="hmi__lamp" aria-hidden="true"></span>
+          <span class="hmi__name">Wrapper</span>
+          <span class="hmi__state">Running</span>
+          <span class="hmi__count">0</span>
+        </button>
+      </div>
+      <div class="hmi__kpis">
+        <div><span class="hmi__k">Cases / min</span><span class="hmi__v" data-k="rate">0.0</span><span class="hmi__spark"><span data-k="ratebar"></span></span></div>
+        <div><span class="hmi__k">OEE</span><span class="hmi__v" data-k="oee">0.0 %</span><span class="hmi__spark"><span data-k="oeebar"></span></span></div>
+        <div><span class="hmi__k">Cases packed</span><span class="hmi__v" data-k="cases">0</span></div>
+        <div><span class="hmi__k">Pallets wrapped</span><span class="hmi__v" data-k="pallets">0</span></div>
+      </div>
+      <div class="hmi__foot"><span class="hmi__alarm" data-k="alarm" role="status" aria-live="polite">No active alarms · All guards closed · Air 6.1 bar</span><button class="hmi__reset" data-reset>Reset line</button></div>
     </div>
   </div>
 </section>
-<section class="stage dark ">
-  <div class="stage__copy">
-    <p class="kicker">HoneyLine</p>
-    <h2 class="display">Eight machines.<br>One live line.</h2>
-    <p class="intro">Honey jars go in at one end and come out as a wrapped pallet. Every box is tracked and the line screen updates in real time.</p>
-    <div class="actions"><a class="link" href="/work/honeyline/">Explore HoneyLine<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
-  </div>
-  <figure class="stage__media"><img src="/img/film-hl.webp" alt="Honey jars travelling along the HoneyLine infeed conveyor" width="1400" height="788"></figure>
-</section>
-<section class="block dark stats">
+<section class="block stats">
   <div class="wrap stats__row">
-    <p><strong>8</strong>machines running live in the HoneyLine demo</p>
-    <p><strong>100 s</strong>PW-600 film at 1080p, cut from 11 camera shots</p>
-    <p><strong>3</strong>ways to play it: headset, PC or game controller</p>
+    <p><strong data-count="8">8</strong>machines running live in the HoneyLine demo</p>
+    <p><strong data-count="100" data-suffix=" s">100 s</strong>PW-600 film at 1080p, cut from 11 camera shots</p>
+    <p><strong data-count="3">3</strong>ways to play: VR headset, PC or game controller</p>
   </div>
 </section>
-<section class="stage light ">
-  <div class="stage__copy">
-    <p class="kicker">PW-600</p>
-    <h2 class="display">Simulated down<br>to the water.</h2>
-    <p class="intro">A full industrial washing cell. Dirty baskets in, clean parts out, with water that floods, foams, sprays and drains.</p>
-    <div class="actions"><a class="link" href="/work/pw-600/">Explore the PW-600<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+<section class="block uses">
+  <div class="wrap"><h2 class="h2">One model.<br>Four ways to use it.</h2>
+  <p class="body">You pay for the model once. Then it works at every show, on your website and in your training room.</p></div>
+  <div class="wrap bento">
+    <a class="tile tile--big" href="/services/#uses"><img src="/img/vr.webp" alt="" loading="lazy"><span class="tile__txt"><span class="tile__h">VR at your stand</span><span class="tile__p">Visitors put on a headset and stand inside your running factory.</span></span></a>
+    <a class="tile" href="/services/#uses"><img src="/img/hero.webp" alt="" loading="lazy"><span class="tile__txt"><span class="tile__h">Interactive simulation</span><span class="tile__p">Walk around the line. Operate it.</span></span></a>
+    <a class="tile" href="/services/#uses"><img src="/img/film-pw.webp" alt="" loading="lazy"><span class="tile__txt"><span class="tile__h">Promo films</span><span class="tile__p">HD films for LinkedIn and stand screens.</span></span></a>
+    <a class="tile tile--wide" href="/services/#uses"><img src="/img/training.webp" alt="" loading="lazy"><span class="tile__txt"><span class="tile__h">Operator training</span><span class="tile__p">Staff learn the machine before they touch it.</span></span></a>
   </div>
-  <figure class="stage__media"><img src="/img/pw600.webp" alt="PW-600 rotary parts washer cell with loading shuttle and control desk" width="1400" height="788"></figure>
 </section>
-<section class="block closing mist">
+<section class="block spots" id="explore">
+  <div class="wrap spots__head"><h2 class="h2">Touch the machine.</h2><p class="body">Tap a point on the PW-600 to see what it does.</p></div>
+  <div class="wrap spots__grid">
+    <figure class="spots__fig">
+      <img src="/img/pw600.webp" alt="PW-600 rotary parts washer cell with loading shuttle, outfeed conveyor and operator desk" loading="lazy" width="1400" height="788">
+      <button class="spot is-on" style="left:31%;top:60%" data-s="0" aria-expanded="true" aria-controls="spot-card"><span class="sr">Loading shuttle</span></button>
+      <button class="spot" style="left:43%;top:37%" data-s="1" aria-expanded="false" aria-controls="spot-card"><span class="sr">Inspection window</span></button>
+      <button class="spot" style="left:58%;top:31%" data-s="2" aria-expanded="false" aria-controls="spot-card"><span class="sr">Wash chamber</span></button>
+      <button class="spot" style="left:81%;top:53%" data-s="3" aria-expanded="false" aria-controls="spot-card"><span class="sr">Outfeed conveyor</span></button>
+      <button class="spot" style="left:92%;top:57%" data-s="4" aria-expanded="false" aria-controls="spot-card"><span class="sr">Operator desk</span></button>
+    </figure>
+    <div class="spots__card" id="spot-card" aria-live="polite"><img src="/img/shuttle.webp" alt="" loading="lazy" width="1400" height="788"><h3>Loading shuttle</h3><p>Dirty baskets ride in on the shuttle and lift into the chamber. You can drive it from the HMI or step through it frame by frame.</p></div>
+  </div>
+  <template data-spot="0"><img src="/img/shuttle.webp" alt="" loading="lazy" width="1400" height="788"><h3>Loading shuttle</h3><p>Dirty baskets ride in on the shuttle and lift into the chamber. You can drive it from the HMI or step through it frame by frame.</p></template><template data-spot="1"><img src="/img/window.webp" alt="" loading="lazy" width="1400" height="788"><h3>Inspection window</h3><p>Watch the wash through the glass, exactly as an operator would on the shop floor.</p></template><template data-spot="2"><img src="/img/drum.webp" alt="" loading="lazy" width="1400" height="788"><h3>Wash chamber</h3><p>Cut the casing away to see the drum turn and the jets work. Water floods, foams, sprays and drains.</p></template><template data-spot="3"><img src="/img/filling.webp" alt="" loading="lazy" width="1400" height="788"><h3>Outfeed conveyor</h3><p>Clean baskets roll out to the unload station, ready for the next job.</p></template><template data-spot="4"><img src="/img/training.webp" alt="" loading="lazy" width="1400" height="788"><h3>Operator desk</h3><p>A clickable HMI runs the full seven-step cycle. It doubles as the training screen.</p></template>
+</section>
+<section class="block closing">
+  <div class="closing__glow" aria-hidden="true"></div>
   <div class="wrap center">
-    <h2 class="display display--md">Got a show coming up?</h2>
-    <p class="intro">Tell us about your machine and the date. We reply within one working day.</p>
-    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="mailto:sales@virtualine.co.uk">Email sales<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <h2 class="display">Got a show coming up?</h2>
+    <p class="body">Tell us about your machine and the date. We reply within one working day.</p>
+    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="/work/">See our work<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
 </section>
 
 </main>
 <footer class="foot">
-  <div class="foot__in">
-    <div class="foot__cols">
-      <div><h2>Explore</h2><a href="/services/">What we do</a><a href="/work/">Our work</a><a href="/process/">How it works</a></div>
-      <div><h2>Showcases</h2><a href="/work/honeyline/">HoneyLine packing line</a><a href="/work/pw-600/">PW-600 parts washer</a></div>
-      <div><h2>Help</h2><a href="/faq/">FAQ</a><a href="/contact/">Book a demo</a></div>
-      <div><h2>Email us</h2><a href="mailto:sales@virtualine.co.uk">sales@virtualine.co.uk</a><a href="mailto:tech@virtualine.co.uk">tech@virtualine.co.uk</a></div>
-    </div>
-    <p class="foot__legal">Copyright © <span id="year">2026</span> Virtualine. Digital twins, VR and factory films, built in the UK.</p>
+  <div class="wrap foot__top">
+    <p class="foot__big">Play the film.<br>Hand them the controller.</p>
+    <a class="btn" href="/contact/">Book a demo</a>
   </div>
+  <div class="wrap foot__cols">
+    <div><h2>Explore</h2><a href="/services/">What we do</a><a href="/work/">Our work</a><a href="/process/">How it works</a></div>
+    <div><h2>Showcases</h2><a href="/work/honeyline/">HoneyLine packing line</a><a href="/work/pw-600/">PW-600 parts washer</a></div>
+    <div><h2>Help</h2><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></div>
+    <div><h2>Email</h2><a href="mailto:sales@virtualine.co.uk">sales@virtualine.co.uk</a><a href="mailto:tech@virtualine.co.uk">tech@virtualine.co.uk</a></div>
+  </div>
+  <p class="wrap foot__legal">© <span id="year">2026</span> Virtualine. Digital twins, VR and factory films, made in the UK.</p>
 </footer>
+<script src="/vendor/gsap.min.js" defer></script>
+<script src="/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/vendor/lenis.min.js" defer></script>
 <script src="/main.js" defer></script>
 </body>
 </html>

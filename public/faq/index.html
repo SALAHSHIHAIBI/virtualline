@@ -2,7 +2,7 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>FAQ | Virtualine</title>
 <meta name="description" content="Answers on CAD, confidentiality, one-off shows, cost and what equipment you need at the stand.">
 <link rel="canonical" href="https://virtualine.co.uk/faq/">
@@ -11,12 +11,14 @@
 <meta property="og:image" content="https://virtualine.co.uk/img/team.webp">
 <meta property="og:url" content="https://virtualine.co.uk/faq/">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0f1013">
 <link rel="icon" href="/img/favicon.png" type="image/png">
+<link rel="preload" as="image" href="/img/team.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -28,54 +30,58 @@
       <a href="/work/">Our work</a>
       <a href="/process/">How it works</a>
       <a href="/faq/" aria-current="page">FAQ</a>
-      <a href="/contact/">Contact</a>
+      <a href="/contact/" class="gnav__cta">Book a demo</a>
     </nav>
     <button class="gnav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   </div>
 </header>
-<div class="lnav">
-  <div class="lnav__in">
-    <span class="lnav__title">FAQ</span>
-    <nav class="lnav__links" aria-label="On this page"></nav>
-    <a class="btn btn--sm" href="/contact/">Book a demo</a>
-  </div>
-</div>
 <main id="main">
-<section class="block light intro-block">
-  <div class="wrap narrow center">
-    <h1 class="display">Questions we<br>often hear.</h1>
-    <p class="intro">Short answers. If yours isn’t here, just ask.</p>
+<section class="hero" data-hero>
+  <div class="hero__media"><img src="/img/team.webp" alt="Operator in Virtualine workwear on a safe walkway" width="1400" height="788" fetchpriority="high"></div>
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="wrap hero__copy">
+    
+    <h1 class="hero__title"><span class="ln"><span>Questions we</span></span><span class="ln"><span>often hear.</span></span></h1>
+    <p class="hero__intro">Short answers. If yours isn’t here, just ask.</p>
+    
   </div>
+  <div class="hero__cue" aria-hidden="true"><span></span>Scroll</div>
 </section>
-<section class="block light pt0">
+<section class="block">
   <div class="wrap narrow faq">
-    <details><summary>We don’t have CAD. Can you still build it?</summary><p>Yes. Photos, drawings and measurements are enough to start. We model the rest.</p></details>
+    <details open><summary>We don’t have CAD. Can you still build it?</summary><p>Yes. Photos, drawings and measurements are enough to start. We model the rest.</p></details>
     <details><summary>Our machine is confidential.</summary><p>We can show the outside and the process only, and keep the inside detail private.</p></details>
     <details><summary>We only need it for one show.</summary><p>The same model becomes your film, website content and training tool, so it keeps working long after the show.</p></details>
     <details><summary>Isn’t this expensive?</summary><p>Compare it with shipping, installing and running the real machine at every show, every year. You pay for the model once.</p></details>
     <details><summary>What do we need at the stand?</summary><p>A VR headset, a laptop or stand screen, and a game controller if you like. No shipping, no install, and no power or water for the machine.</p></details>
   </div>
 </section>
-<section class="block closing mist">
+<section class="block closing">
+  <div class="closing__glow" aria-hidden="true"></div>
   <div class="wrap center">
-    <h2 class="display display--md">Still wondering?</h2>
-    <p class="intro">Ask us anything about your machine. We reply within one working day.</p>
-    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="mailto:sales@virtualine.co.uk">Email sales<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <h2 class="display">Still wondering?</h2>
+    <p class="body">Ask us anything about your machine. We reply within one working day.</p>
+    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="/work/">See our work<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
 </section>
 
 </main>
 <footer class="foot">
-  <div class="foot__in">
-    <div class="foot__cols">
-      <div><h2>Explore</h2><a href="/services/">What we do</a><a href="/work/">Our work</a><a href="/process/">How it works</a></div>
-      <div><h2>Showcases</h2><a href="/work/honeyline/">HoneyLine packing line</a><a href="/work/pw-600/">PW-600 parts washer</a></div>
-      <div><h2>Help</h2><a href="/faq/">FAQ</a><a href="/contact/">Book a demo</a></div>
-      <div><h2>Email us</h2><a href="mailto:sales@virtualine.co.uk">sales@virtualine.co.uk</a><a href="mailto:tech@virtualine.co.uk">tech@virtualine.co.uk</a></div>
-    </div>
-    <p class="foot__legal">Copyright © <span id="year">2026</span> Virtualine. Digital twins, VR and factory films, built in the UK.</p>
+  <div class="wrap foot__top">
+    <p class="foot__big">Play the film.<br>Hand them the controller.</p>
+    <a class="btn" href="/contact/">Book a demo</a>
   </div>
+  <div class="wrap foot__cols">
+    <div><h2>Explore</h2><a href="/services/">What we do</a><a href="/work/">Our work</a><a href="/process/">How it works</a></div>
+    <div><h2>Showcases</h2><a href="/work/honeyline/">HoneyLine packing line</a><a href="/work/pw-600/">PW-600 parts washer</a></div>
+    <div><h2>Help</h2><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></div>
+    <div><h2>Email</h2><a href="mailto:sales@virtualine.co.uk">sales@virtualine.co.uk</a><a href="mailto:tech@virtualine.co.uk">tech@virtualine.co.uk</a></div>
+  </div>
+  <p class="wrap foot__legal">© <span id="year">2026</span> Virtualine. Digital twins, VR and factory films, made in the UK.</p>
 </footer>
+<script src="/vendor/gsap.min.js" defer></script>
+<script src="/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/vendor/lenis.min.js" defer></script>
 <script src="/main.js" defer></script>
 </body>
 </html>

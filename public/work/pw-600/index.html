@@ -2,7 +2,7 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>PW-600 rotary parts washer | Virtualine</title>
 <meta name="description" content="The PW-600 rotary parts washer: a full industrial washing cell simulated down to the water, walkable in first person or VR.">
 <link rel="canonical" href="https://virtualine.co.uk/work/pw-600/">
@@ -11,12 +11,14 @@
 <meta property="og:image" content="https://virtualine.co.uk/img/pw600.webp">
 <meta property="og:url" content="https://virtualine.co.uk/work/pw-600/">
 <meta property="og:type" content="website">
-<meta name="theme-color" content="#ffffff">
+<meta name="theme-color" content="#0f1013">
 <link rel="icon" href="/img/favicon.png" type="image/png">
+<link rel="preload" as="image" href="/img/pw600.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/styles.css">
+<script>document.documentElement.classList.add('js')</script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -28,86 +30,96 @@
       <a href="/work/" aria-current="page">Our work</a>
       <a href="/process/">How it works</a>
       <a href="/faq/">FAQ</a>
-      <a href="/contact/">Contact</a>
+      <a href="/contact/" class="gnav__cta">Book a demo</a>
     </nav>
     <button class="gnav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   </div>
 </header>
-<div class="lnav">
-  <div class="lnav__in">
-    <span class="lnav__title">PW-600</span>
-    <nav class="lnav__links" aria-label="On this page"><a href="#cycle">Cycle</a><a href="#closer">Closer look</a><a href="#features">Features</a></nav>
-    <a class="btn btn--sm" href="/contact/">Book a demo</a>
-  </div>
-</div>
 <main id="main">
-<section class="stage dark ">
-  <div class="stage__copy">
-    
-    <h1 class="display">PW-600.</h1>
-    <p class="intro">A rotary parts washer, simulated down to the water. Dirty baskets in, clean parts out.</p>
-    
+<section class="hero" data-hero>
+  <div class="hero__media"><img src="/img/pw600.webp" alt="PW-600 rotary parts washer cell" width="1400" height="788" fetchpriority="high"></div>
+  <div class="hero__shade" aria-hidden="true"></div>
+  <div class="wrap hero__copy">
+    <nav class="crumbs" aria-label="Breadcrumb"><a href="/work/">Our work</a> <span aria-hidden="true">/</span> <a href="/work/pw-600/">PW-600</a></nav>
+    <h1 class="hero__title"><span class="ln"><span>PW-600.</span></span></h1>
+    <p class="hero__intro">A rotary parts washer, simulated down to the water. Dirty baskets in, clean parts out.</p>
+    <div class="actions"><a class="link" href="#explore">Touch the machine<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
-  <figure class="stage__media"><img src="/img/pw600.webp" alt="PW-600 rotary parts washer cell with loading shuttle and control desk" width="1400" height="788"></figure>
+  <div class="hero__cue" aria-hidden="true"><span></span>Scroll</div>
 </section>
-<section class="block light" id="cycle">
-  <div class="wrap">
-    <h2 class="h2">The wash cycle, in seven steps.</h2>
-    <ol class="flow flow--7"><li>Load</li><li>Flood</li><li>Ultrasonic</li><li>Spray</li><li>Drain and filter</li><li>Rinse and dry</li><li>Unload</li></ol>
+<section class="block spots" id="explore">
+  <div class="wrap spots__head"><h2 class="h2">Touch the machine.</h2><p class="body">Tap a point on the PW-600 to see what it does.</p></div>
+  <div class="wrap spots__grid">
+    <figure class="spots__fig">
+      <img src="/img/pw600.webp" alt="PW-600 rotary parts washer cell with loading shuttle, outfeed conveyor and operator desk" loading="lazy" width="1400" height="788">
+      <button class="spot is-on" style="left:31%;top:60%" data-s="0" aria-expanded="true" aria-controls="spot-card"><span class="sr">Loading shuttle</span></button>
+      <button class="spot" style="left:43%;top:37%" data-s="1" aria-expanded="false" aria-controls="spot-card"><span class="sr">Inspection window</span></button>
+      <button class="spot" style="left:58%;top:31%" data-s="2" aria-expanded="false" aria-controls="spot-card"><span class="sr">Wash chamber</span></button>
+      <button class="spot" style="left:81%;top:53%" data-s="3" aria-expanded="false" aria-controls="spot-card"><span class="sr">Outfeed conveyor</span></button>
+      <button class="spot" style="left:92%;top:57%" data-s="4" aria-expanded="false" aria-controls="spot-card"><span class="sr">Operator desk</span></button>
+    </figure>
+    <div class="spots__card" id="spot-card" aria-live="polite"><img src="/img/shuttle.webp" alt="" loading="lazy" width="1400" height="788"><h3>Loading shuttle</h3><p>Dirty baskets ride in on the shuttle and lift into the chamber. You can drive it from the HMI or step through it frame by frame.</p></div>
+  </div>
+  <template data-spot="0"><img src="/img/shuttle.webp" alt="" loading="lazy" width="1400" height="788"><h3>Loading shuttle</h3><p>Dirty baskets ride in on the shuttle and lift into the chamber. You can drive it from the HMI or step through it frame by frame.</p></template><template data-spot="1"><img src="/img/window.webp" alt="" loading="lazy" width="1400" height="788"><h3>Inspection window</h3><p>Watch the wash through the glass, exactly as an operator would on the shop floor.</p></template><template data-spot="2"><img src="/img/drum.webp" alt="" loading="lazy" width="1400" height="788"><h3>Wash chamber</h3><p>Cut the casing away to see the drum turn and the jets work. Water floods, foams, sprays and drains.</p></template><template data-spot="3"><img src="/img/filling.webp" alt="" loading="lazy" width="1400" height="788"><h3>Outfeed conveyor</h3><p>Clean baskets roll out to the unload station, ready for the next job.</p></template><template data-spot="4"><img src="/img/training.webp" alt="" loading="lazy" width="1400" height="788"><h3>Operator desk</h3><p>A clickable HMI runs the full seven-step cycle. It doubles as the training screen.</p></template>
+</section>
+<section class="walk" id="cycle" data-walk style="--n:7">
+  <div class="walk__stage">
+    <div class="walk__imgs">
+      <img class="walk__img is-on" src="/img/shuttle.webp" alt="Loading shuttle carrying a basket" loading="eager" width="1400" height="788">
+      <img class="walk__img" src="/img/filling.webp" alt="Chamber filling with water" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/drum.webp" alt="Inside the drum during the wash" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/spray.webp" alt="Spray wash with the drum turning" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/water.webp" alt="Wash water draining under the drum" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/window.webp" alt="Rinse seen through the inspection window" loading="lazy" width="1400" height="788">
+      <img class="walk__img" src="/img/pw600.webp" alt="PW-600 cell with clean basket on the outfeed" loading="lazy" width="1400" height="788">
+    </div>
+    <div class="walk__shade" aria-hidden="true"></div>
+    <div class="wrap walk__copy">
+      <h2 class="walk__heading">The wash cycle.</h2>
+      <p class="walk__count" aria-hidden="true"><span class="walk__num">01</span><span class="walk__of">/ 07</span></p>
+      <ol class="walk__steps">
+        <li class="walk__step is-on"><h3>Load</h3><p>The shuttle lifts a basket of dirty parts into the chamber.</p></li>
+        <li class="walk__step"><h3>Flood</h3><p>Wash water fills the chamber around the basket.</p></li>
+        <li class="walk__step"><h3>Ultrasonic</h3><p>The drum turns while ultrasound lifts the grime.</p></li>
+        <li class="walk__step"><h3>Spray</h3><p>High-pressure jets hit every face of every part.</p></li>
+        <li class="walk__step"><h3>Drain and filter</h3><p>Dirty water drains away and runs through the filters.</p></li>
+        <li class="walk__step"><h3>Rinse and dry</h3><p>A clean rinse, then hot air until the parts are dry.</p></li>
+        <li class="walk__step"><h3>Unload</h3><p>Clean parts roll out to the unload station.</p></li>
+      </ol>
+    </div>
+    <div class="wrap walk__nav"><div class="walk__ticks"><button class="walk__tick is-on" data-i="0" aria-label="Step 1: Load"><span>01</span></button><button class="walk__tick" data-i="1" aria-label="Step 2: Flood"><span>02</span></button><button class="walk__tick" data-i="2" aria-label="Step 3: Ultrasonic"><span>03</span></button><button class="walk__tick" data-i="3" aria-label="Step 4: Spray"><span>04</span></button><button class="walk__tick" data-i="4" aria-label="Step 5: Drain and filter"><span>05</span></button><button class="walk__tick" data-i="5" aria-label="Step 6: Rinse and dry"><span>06</span></button><button class="walk__tick" data-i="6" aria-label="Step 7: Unload"><span>07</span></button></div><div class="walk__bar"><span></span></div></div>
   </div>
 </section>
-<section class="block dark" id="closer">
-  <div class="wrap"><h2 class="h2">Take a closer look.</h2></div>
-  <div class="rail" tabindex="0" aria-label="Take a closer look., scroll sideways for more">
-    <ul class="rail__track">
-      <li class="rail__item"><img src="/img/shuttle.webp" alt="Automatic loading shuttle carrying a basket" loading="lazy" width="1400" height="788"><p><strong>Loading shuttle.</strong> Baskets ride in automatically.</p></li>
-      <li class="rail__item"><img src="/img/filling.webp" alt="Wash chamber filling with water" loading="lazy" width="1400" height="788"><p><strong>Flood.</strong> The chamber fills around the basket.</p></li>
-      <li class="rail__item"><img src="/img/drum.webp" alt="Inside the drum, spray jets hitting the basket" loading="lazy" width="1400" height="788"><p><strong>Inside the drum.</strong> Cut away the casing and watch the jets work.</p></li>
-      <li class="rail__item"><img src="/img/spray.webp" alt="Spray wash with the drum turning" loading="lazy" width="1400" height="788"><p><strong>Spray wash.</strong> The drum turns while the spray cleans.</p></li>
-      <li class="rail__item"><img src="/img/window.webp" alt="Spray wash seen through the inspection window" loading="lazy" width="1400" height="788"><p><strong>Through the window.</strong> The view an operator really gets.</p></li>
-    </ul>
-  </div>
-  <div class="wrap rail__ctrl"><button class="rbtn" data-dir="-1" aria-label="Previous">‹</button><button class="rbtn" data-dir="1" aria-label="Next">›</button></div>
+<section class="block"><div class="wrap"><h2 class="h2">Take it apart. Then run it.</h2></div><div class="wrap points"><div><h3>Walk it</h3><p>Move around the cell in first person or in VR.</p></div><div><h3>Operate it</h3><p>Run the full cycle from the HMI, or inspect any part.</p></div><div><h3>See inside</h3><p>Cutaway, X-ray and exploded views.</p></div><div><h3>Live water</h3><p>It floods, bubbles, foams, sprays and drains.</p></div><div><h3>Film it</h3><p>Slow motion, pause and record a film from any angle.</p></div><div><h3>Made for</h3><p>Cleaning and surface-treatment kit, heavy machinery, and any machine with a process inside.</p></div></div></section>
+<section class="block nextup">
+  <div class="wrap"><a class="nextup__card" href="/work/honeyline/"><img src="/img/film-hl.webp" alt="" loading="lazy" width="1400" height="788"><span class="nextup__txt"><span class="nextup__label">Previous showcase</span><span class="nextup__title">HoneyLine packing line<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></div>
 </section>
-<section class="block light" id="features">
-  <div class="wrap narrow center"><h2 class="display display--md">Take it apart. Then run it.</h2></div>
-  <div class="wrap points points--3">
-    <div><h3>Walk it.</h3><p>Move around the cell in first person or in VR.</p></div>
-    <div><h3>Operate it.</h3><p>Run the full wash cycle from the HMI, or inspect any part.</p></div>
-    <div><h3>See inside.</h3><p>Cutaway, X-ray and exploded views.</p></div>
-    <div><h3>Live water.</h3><p>It floods, bubbles, foams, sprays and drains.</p></div>
-    <div><h3>Film it.</h3><p>Slow motion, pause and record a film from any angle.</p></div>
-    <div><h3>Made for</h3><p>Cleaning and surface-treatment kit, heavy machinery, and any machine with a process inside.</p></div>
-  </div>
-</section>
-<section class="block light nextup">
-  <div class="wrap">
-    <a class="nextup__card" href="/work/honeyline/">
-      <img src="/img/film-hl.webp" alt="" loading="lazy" width="1400" height="788">
-      <span class="nextup__txt"><span class="nextup__label">Previous showcase</span><span class="nextup__title">HoneyLine packing line<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
-    </a>
-  </div>
-</section>
-<section class="block closing mist">
+<section class="block closing">
+  <div class="closing__glow" aria-hidden="true"></div>
   <div class="wrap center">
-    <h2 class="display display--md">Got a show coming up?</h2>
-    <p class="intro">Tell us about your machine and the date. We reply within one working day.</p>
-    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="mailto:sales@virtualine.co.uk">Email sales<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <h2 class="display">Got a show coming up?</h2>
+    <p class="body">Tell us about your machine and the date. We reply within one working day.</p>
+    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="/work/">See our work<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
 </section>
 
 </main>
 <footer class="foot">
-  <div class="foot__in">
-    <div class="foot__cols">
-      <div><h2>Explore</h2><a href="/services/">What we do</a><a href="/work/">Our work</a><a href="/process/">How it works</a></div>
-      <div><h2>Showcases</h2><a href="/work/honeyline/">HoneyLine packing line</a><a href="/work/pw-600/">PW-600 parts washer</a></div>
-      <div><h2>Help</h2><a href="/faq/">FAQ</a><a href="/contact/">Book a demo</a></div>
-      <div><h2>Email us</h2><a href="mailto:sales@virtualine.co.uk">sales@virtualine.co.uk</a><a href="mailto:tech@virtualine.co.uk">tech@virtualine.co.uk</a></div>
-    </div>
-    <p class="foot__legal">Copyright © <span id="year">2026</span> Virtualine. Digital twins, VR and factory films, built in the UK.</p>
+  <div class="wrap foot__top">
+    <p class="foot__big">Play the film.<br>Hand them the controller.</p>
+    <a class="btn" href="/contact/">Book a demo</a>
   </div>
+  <div class="wrap foot__cols">
+    <div><h2>Explore</h2><a href="/services/">What we do</a><a href="/work/">Our work</a><a href="/process/">How it works</a></div>
+    <div><h2>Showcases</h2><a href="/work/honeyline/">HoneyLine packing line</a><a href="/work/pw-600/">PW-600 parts washer</a></div>
+    <div><h2>Help</h2><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></div>
+    <div><h2>Email</h2><a href="mailto:sales@virtualine.co.uk">sales@virtualine.co.uk</a><a href="mailto:tech@virtualine.co.uk">tech@virtualine.co.uk</a></div>
+  </div>
+  <p class="wrap foot__legal">© <span id="year">2026</span> Virtualine. Digital twins, VR and factory films, made in the UK.</p>
 </footer>
+<script src="/vendor/gsap.min.js" defer></script>
+<script src="/vendor/ScrollTrigger.min.js" defer></script>
+<script src="/vendor/lenis.min.js" defer></script>
 <script src="/main.js" defer></script>
 </body>
 </html>
