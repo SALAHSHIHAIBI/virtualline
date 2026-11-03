@@ -1,4 +1,7 @@
 (() => {
+  // Contact form endpoint: Cloudflare Worker (see src/worker.js)
+  const API = 'https://api.virtualline.co.uk/contact';
+
   // mobile menu
   const toggle = document.querySelector('.nav__toggle');
   const links = document.querySelector('.nav__links');
@@ -48,7 +51,7 @@
     btn.disabled = true; btn.textContent = 'Sending…'; setStatus('');
     try {
       const data = Object.fromEntries(new FormData(form));
-      const res = await fetch('/api/contact', {
+      const res = await fetch(API, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(data),

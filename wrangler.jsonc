@@ -1,21 +1,14 @@
+// Contact form API only. The website is on GitHub Pages (see .github/workflows/pages.yml).
 {
   "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "virtualline",
+  "name": "virtualline-contact",
   "main": "src/worker.js",
   "compatibility_date": "2025-09-01",
-  "assets": {
-    "directory": "./public",
-    "binding": "ASSETS",
-    "not_found_handling": "404-page"
-  },
-  // Contact form emails go to this verified Email Routing destination
   "send_email": [
     { "name": "CONTACT_EMAIL", "destination_address": "virtualline35@gmail.com" }
   ],
-  "vars": { "CONTACT_TO": "virtualline35@gmail.com" },
   "routes": [
-    { "pattern": "virtualline.co.uk", "custom_domain": true },
-    { "pattern": "www.virtualline.co.uk", "custom_domain": true }
+    { "pattern": "api.virtualline.co.uk", "custom_domain": true }
   ],
   "observability": { "enabled": true }
 }
