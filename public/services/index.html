@@ -8,12 +8,11 @@
 <link rel="canonical" href="https://virtualine.co.uk/services/">
 <meta property="og:title" content="What we do | Virtualine">
 <meta property="og:description" content="One model, four ways to use it: interactive simulation, VR stand experiences, cinematic promo films and operator training.">
-<meta property="og:image" content="https://virtualine.co.uk/img/vr.webp">
+<meta property="og:image" content="https://virtualine.co.uk/video/reel-vr.jpg">
 <meta property="og:url" content="https://virtualine.co.uk/services/">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0f1013">
 <link rel="icon" href="/img/favicon.png" type="image/png">
-<link rel="preload" as="image" href="/img/vr.webp">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
@@ -24,10 +23,11 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="gnav">
   <div class="gnav__in">
-    <a href="/" class="gnav__brand" aria-label="Virtualine home"><img src="/img/logo.png" alt="" width="14" height="23"><span>Virtualine</span></a>
+    <a href="/" class="gnav__brand" aria-label="Virtualine home"><img src="/img/logo.png" alt="" width="25" height="40"><span>VIRTUALINE</span></a>
     <nav class="gnav__links" id="menu" aria-label="Main">
       <a href="/services/" aria-current="page">What we do</a>
       <a href="/work/">Our work</a>
+      <a href="/samples/">Samples</a>
       <a href="/process/">How it works</a>
       <a href="/faq/">FAQ</a>
       <a href="/contact/" class="gnav__cta">Book a demo</a>
@@ -37,72 +37,78 @@
 </header>
 <main id="main">
 <section class="hero" data-hero>
-  <div class="hero__media"><img src="/img/vr.webp" alt="First-person VR view beside the PW-600 parts washer" width="1400" height="788" fetchpriority="high"></div>
+  <div class="hero__media"><video class="" src="/video/reel-vr.mp4" poster="/video/reel-vr.jpg" autoplay muted loop playsinline preload="metadata" aria-label="VR walk-through and training views of the PW-600"></video></div>
   <div class="hero__shade" aria-hidden="true"></div>
   <div class="wrap hero__copy">
     
     <h1 class="hero__title"><span class="ln"><span>One model.</span></span><span class="ln"><span>Four ways</span></span><span class="ln"><span>to use it.</span></span></h1>
     <p class="hero__intro">You pay for the model once. Then it works at every show, on your website and in your training room.</p>
-    <div class="actions"><a class="btn" href="/contact/">Book a demo</a></div>
+    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="#uses">See all four<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
-  <div class="hero__cue" aria-hidden="true"><span></span>Scroll</div>
+  <button class="hero__pause" aria-label="Pause background video" data-pause><span></span><span></span></button>
 </section>
-<section class="walk" id="uses" data-walk style="--n:4">
-  <div class="walk__stage">
-    <div class="walk__imgs">
-      <img class="walk__img is-on" src="/img/hero.webp" alt="3D digital twin of a packing machine with its operator panel" loading="eager" width="1400" height="788">
-      <img class="walk__img" src="/img/vr.webp" alt="First-person VR view beside the PW-600" loading="lazy" width="1400" height="788">
-      <img class="walk__img" src="/img/film-pw.webp" alt="Film still of the washer drum turning in water" loading="lazy" width="1400" height="788">
-      <img class="walk__img" src="/img/training.webp" alt="Training view of the PW-600 with information points" loading="lazy" width="1400" height="788">
+<div class="marquee" aria-hidden="true"><div class="marquee__track"><span>Digital twins</span><span>VR stand experiences</span><span>Operator training</span><span>Cinematic promo films</span><span>Built from your CAD</span><span>Unity and Unreal</span><span>Digital twins</span><span>VR stand experiences</span><span>Operator training</span><span>Cinematic promo films</span><span>Built from your CAD</span><span>Unity and Unreal</span></div></div>
+<section class="block feats" id="uses">
+  <div class="wrap feat">
+    <figure class="feat__img" data-reveal><img src="/img/hero.webp" alt="3D digital twin of a packing machine with its operator panel" loading="lazy" width="1400" height="788"></figure>
+    <div class="feat__txt" data-reveal><p class="feat__n">01</p><h2 class="h2">Interactive simulation</h2><p class="body">Your machine or full line as a 3D twin. Walk around it, open it up, run it. Show buyers the line before a part is cut.</p></div>
+  </div>
+  <div class="wrap feat feat--flip">
+    <figure class="feat__img" data-reveal><img src="/img/vr.webp" alt="First-person VR view beside the PW-600" loading="lazy" width="1400" height="788"></figure>
+    <div class="feat__txt" data-reveal><p class="feat__n">02</p><h2 class="h2">VR at your stand</h2><p class="body">Visitors put on a headset and stand inside your factory. No shipping, no install, no power or water. It draws a queue.</p></div>
+  </div>
+  <div class="wrap feat">
+    <figure class="feat__img" data-reveal><img src="/img/film-pw.webp" alt="Film still of the washer drum turning in water" loading="lazy" width="1400" height="788"></figure>
+    <div class="feat__txt" data-reveal><p class="feat__n">03</p><h2 class="h2">Cinematic promo films</h2><p class="body">HD films rendered straight from the simulation, for LinkedIn, your website, sales emails and stand screens.</p></div>
+  </div>
+  <div class="wrap feat feat--flip">
+    <figure class="feat__img" data-reveal><img src="/img/training.webp" alt="Training view of the PW-600 with information points" loading="lazy" width="1400" height="788"></figure>
+    <div class="feat__txt" data-reveal><p class="feat__n">04</p><h2 class="h2">Operator training</h2><p class="body">Guided tasks, information points and a clickable HMI. Staff learn before they touch it, and mistakes cost nothing.</p></div>
+  </div>
+</section>
+<section class="block vrsec" id="vr">
+  <div class="wrap vr">
+    <div class="vr__media" data-reveal><video class="vr__video" src="/video/reel-vr.mp4" poster="/video/reel-vr.jpg" autoplay muted loop playsinline preload="metadata" aria-label="Walking the PW-600 cell in VR"></video></div>
+    <div class="vr__txt" data-reveal>
+      <h2 class="h2">Put the headset on. Stand inside the machine.</h2>
+      <p class="body">Visitors walk your running factory at the stand. No shipping, no install, no power or water.</p>
+      <ul class="plays">
+        <li><svg viewBox="0 0 48 30" aria-hidden="true"><path d="M4 6h40a2 2 0 012 2v12a4 4 0 01-4 4H32l-4-5h-8l-4 5H6a4 4 0 01-4-4V8a2 2 0 012-2z"/></svg><span><strong>VR headset</strong>Full immersion, room-scale</span></li>
+        <li><svg viewBox="0 0 48 30" aria-hidden="true"><rect x="4" y="3" width="40" height="20" rx="2"/><path d="M14 27h20"/></svg><span><strong>PC, keyboard and mouse</strong>Any laptop or stand screen</span></li>
+        <li><svg viewBox="0 0 48 30" aria-hidden="true"><path d="M12 6h24a9 9 0 018.6 11.6l-2.2 7.2a3 3 0 01-5.2 1L33 21H15l-4.2 4.8a3 3 0 01-5.2-1l-2.2-7.2A9 9 0 0112 6z"/></svg><span><strong>Game controller</strong>Easy for any visitor</span></li>
+      </ul>
     </div>
-    <div class="walk__shade" aria-hidden="true"></div>
-    <div class="wrap walk__copy">
-      <h2 class="walk__heading">What you get.</h2>
-      <p class="walk__count" aria-hidden="true"><span class="walk__num">01</span><span class="walk__of">/ 04</span></p>
-      <ol class="walk__steps">
-        <li class="walk__step is-on"><h3>Interactive simulation</h3><p>Your machine or full line as a 3D twin. Walk around it, open it up, run it. Show buyers the line before a part is cut.</p></li>
-        <li class="walk__step"><h3>VR at your stand</h3><p>Visitors put on a headset and stand inside your factory. No shipping, no install, no power or water. It draws a queue.</p></li>
-        <li class="walk__step"><h3>Cinematic promo films</h3><p>HD films rendered straight from the simulation, for LinkedIn, your website, sales emails and stand screens.</p></li>
-        <li class="walk__step"><h3>Operator training</h3><p>Guided tasks, information points and a clickable HMI. Staff learn before they touch it, and mistakes cost nothing.</p></li>
-      </ol>
-    </div>
-    <div class="wrap walk__nav"><div class="walk__ticks"><button class="walk__tick is-on" data-i="0" aria-label="Use 1: Interactive simulation"><span>01</span></button><button class="walk__tick" data-i="1" aria-label="Use 2: VR at your stand"><span>02</span></button><button class="walk__tick" data-i="2" aria-label="Use 3: Cinematic promo films"><span>03</span></button><button class="walk__tick" data-i="3" aria-label="Use 4: Operator training"><span>04</span></button></div><div class="walk__bar"><span></span></div></div>
   </div>
 </section>
-<section class="block plays">
-  <div class="wrap duo">
-    <div><h2 class="h2">Bring the whole factory to the show in a backpack.</h2>
-    <ul class="plain"><li><strong>VR headset</strong> for full immersion</li><li><strong>PC, keyboard and mouse</strong> on any laptop or stand screen</li><li><strong>Game controller</strong> that any visitor can pick up</li></ul></div>
-    <figure class="duo__img"><img src="/img/water.webp" alt="Wash water rolling under the PW-600 drum" loading="lazy" width="1400" height="788"></figure>
-  </div>
-</section>
-<section class="block"><div class="wrap"><h2 class="h2">Not a cartoon of your machine.<br>Your machine.</h2></div><div class="wrap points"><div><h3>Built from real CAD</h3><p>Real pumps, valves, robots and guarding, not placeholder boxes.</p></div><div><h3>Real physics</h3><p>Conveyors and robots move properly. Water floods, foams, sprays and drains.</p></div><div><h3>Your brand on everything</h3><p>Your logo on nameplates, signage, the HMI and the operators’ workwear.</p></div><div><h3>Looks like a real site</h3><p>ISO 7010 safety signs, pipe markers, rating plates and floor graphics.</p></div><div><h3>Unity and Unreal</h3><p>Live interactive builds, plus cinema-quality rendered films.</p></div><div><h3>One build, many uses</h3><p>The same model drives VR, film, training and your website.</p></div></div></section>
+<section class="block"><div class="wrap" data-reveal><h2 class="h2">Not a cartoon of your machine. Your machine.</h2></div><div class="wrap points"><div data-reveal><h3>Built from real CAD</h3><p>Real pumps, valves, robots and guarding, not placeholder boxes.</p></div><div data-reveal><h3>Real physics</h3><p>Conveyors and robots move properly. Water floods, foams, sprays and drains.</p></div><div data-reveal><h3>Your brand on everything</h3><p>Your logo on nameplates, signage, the HMI and the operators’ workwear.</p></div><div data-reveal><h3>Looks like a real site</h3><p>ISO 7010 safety signs, pipe markers, rating plates and floor graphics.</p></div><div data-reveal><h3>Unity and Unreal</h3><p>Live interactive builds, plus cinema-quality rendered films.</p></div><div data-reveal><h3>One build, many uses</h3><p>The same model drives VR, film, training and your website.</p></div></div></section>
 <section class="block nextup">
-  <div class="wrap"><a class="nextup__card" href="/work/"><img src="/img/honeyline.webp" alt="" loading="lazy" width="1400" height="788"><span class="nextup__txt"><span class="nextup__label">Next</span><span class="nextup__title">See it in our work<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></div>
+  <div class="wrap" data-reveal><a class="nextup__card" href="/samples/"><img src="/video/reel-pw600.jpg" alt="" loading="lazy" width="1400" height="788"><span class="nextup__txt"><span class="nextup__label">Next</span><span class="nextup__title">Watch the samples<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></div>
 </section>
 <section class="block closing">
   <div class="closing__glow" aria-hidden="true"></div>
-  <div class="wrap center">
+  <div class="wrap center" data-reveal>
     <h2 class="display">Got a show coming up?</h2>
     <p class="body">Tell us about your machine and the date. We reply within one working day.</p>
-    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="/work/">See our work<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="/samples/">Watch the samples<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
 </section>
 
 </main>
 <footer class="foot">
   <div class="wrap foot__top">
+    <a href="/" class="foot__brand" aria-label="Virtualine home"><img src="/img/logo.png" alt="" width="34" height="55"><span>VIRTUALINE</span></a>
     <p class="foot__big">Play the film.<br>Hand them the controller.</p>
     <a class="btn" href="/contact/">Book a demo</a>
   </div>
   <div class="wrap foot__cols">
-    <div><h2>Explore</h2><a href="/services/">What we do</a><a href="/work/">Our work</a><a href="/process/">How it works</a></div>
-    <div><h2>Showcases</h2><a href="/work/honeyline/">HoneyLine packing line</a><a href="/work/pw-600/">PW-600 parts washer</a></div>
+    <div><h2>Explore</h2><a href="/services/">What we do</a><a href="/work/">Our work</a><a href="/samples/">Samples</a><a href="/process/">How it works</a></div>
+    <div><h2>Showcases</h2><a href="/work/pw-600/">PW-600 parts washer</a><a href="/work/honeyline/">HoneyLine packing line</a></div>
     <div><h2>Help</h2><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></div>
     <div><h2>Email</h2><a href="mailto:sales@virtualine.co.uk">sales@virtualine.co.uk</a><a href="mailto:tech@virtualine.co.uk">tech@virtualine.co.uk</a></div>
   </div>
   <p class="wrap foot__legal">© <span id="year">2026</span> Virtualine. Digital twins, VR and factory films, made in the UK.</p>
 </footer>
+<dialog class="lightbox" id="lightbox" aria-label="Media viewer"><button class="lightbox__close" aria-label="Close">×</button><div class="lightbox__body"></div><p class="lightbox__cap"></p></dialog>
 <script src="/vendor/gsap.min.js" defer></script>
 <script src="/vendor/ScrollTrigger.min.js" defer></script>
 <script src="/vendor/lenis.min.js" defer></script>
