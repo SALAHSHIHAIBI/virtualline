@@ -1,17 +1,20 @@
-// Virtualine contact form API (Cloudflare Worker at https://api.virtualline.co.uk)
+// Virtualine contact form API (Cloudflare Worker at https://api.virtualine.co.uk,
+// also reachable at the old https://api.virtualline.co.uk)
 // The website itself is hosted on GitHub Pages. The form POSTs here, and this Worker
 // emails the enquiry to the inbox via Cloudflare Email Routing (send_email binding).
 //
 // Dashboard setup: Worker "virtualline-contact"
 //   Settings > Bindings > Send email:  name CONTACT_EMAIL, destination virtualline35@gmail.com
-//   Settings > Domains & Routes:      custom domain api.virtualline.co.uk
+//   Settings > Domains & Routes:      custom domains api.virtualine.co.uk and api.virtualline.co.uk
 
 import { EmailMessage } from "cloudflare:email";
 
 const TO = "virtualline35@gmail.com";
-const FROM = "website@virtualline.co.uk";
+const FROM = "website@virtualine.co.uk";
 const FROM_NAME = "Virtualine Website";
 const ALLOWED_ORIGINS = [
+  "https://virtualine.co.uk",
+  "https://www.virtualine.co.uk",
   "https://virtualline.co.uk",
   "https://www.virtualline.co.uk",
   "https://salahshihaibi.github.io",
@@ -19,8 +22,8 @@ const ALLOWED_ORIGINS = [
   "http://127.0.0.1:8787",
 ];
 const TOPICS = {
-  sales: { label: "Sales", alias: "sales@virtualline.co.uk" },
-  tech: { label: "Tech", alias: "tech@virtualline.co.uk" },
+  sales: { label: "Sales", alias: "sales@virtualine.co.uk" },
+  tech: { label: "Tech", alias: "tech@virtualine.co.uk" },
 };
 
 export default {
@@ -71,7 +74,7 @@ async function handleContact(request, env, cors) {
   const tp = TOPICS[topic];
   const subject = `[${tp.label}] Website enquiry from ${name}${company ? " (" + company + ")" : ""}`;
   const body = [
-    `New ${tp.label.toLowerCase()} enquiry from virtualline.co.uk`,
+    `New ${tp.label.toLowerCase()} enquiry from virtualine.co.uk`,
     `(sent to ${tp.alias})`,
     "",
     `Name:    ${name}`,
@@ -104,7 +107,7 @@ async function handleContact(request, env, cors) {
 }
 
 function buildMime({ from, to, replyTo, subject, body }) {
-  const id = `${crypto.randomUUID()}@virtualline.co.uk`;
+  const id = `${crypto.randomUUID()}@virtualine.co.uk`;
   return [
     `From: ${from}`,
     `To: ${to}`,

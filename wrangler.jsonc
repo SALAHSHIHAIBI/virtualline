@@ -8,6 +8,7 @@
     { "name": "CONTACT_EMAIL", "destination_address": "virtualline35@gmail.com" }
   ],
   "routes": [
+    { "pattern": "api.virtualine.co.uk", "custom_domain": true },
     { "pattern": "api.virtualline.co.uk", "custom_domain": true }
   ],
   "observability": { "enabled": true }

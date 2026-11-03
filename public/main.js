@@ -1,6 +1,6 @@
 (() => {
   // Contact form endpoint: Cloudflare Worker (see src/worker.js)
-  const API = 'https://api.virtualline.co.uk/contact';
+  const API = 'https://api.virtualine.co.uk/contact';
 
   // mobile menu
   const toggle = document.querySelector('.nav__toggle');
@@ -62,7 +62,7 @@
       form.classList.add('sent');
       form.innerHTML = '<div class="sent__icon" aria-hidden="true"></div><h3>Thanks, message sent.</h3><p>It\'s with ' + to + '. We\'ll reply to you within one working day.</p>';
     } catch (err) {
-      setStatus(err.message + ' You can also email sales@virtualline.co.uk directly.', 'err');
+      setStatus(err.message + ' You can also email sales@virtualine.co.uk directly.', 'err');
       btn.disabled = false; btn.textContent = 'Send message';
     }
   });
