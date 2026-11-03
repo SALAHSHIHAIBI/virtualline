@@ -2,6 +2,13 @@
   // Contact form endpoint: Cloudflare Worker (see src/worker.js)
   const API = 'https://api.virtualine.co.uk/contact';
 
+  // old one-page links (virtualine.co.uk/#contact etc.) → their new pages
+  const OLD = { '#services': '/services/', '#work': '/work/', '#process': '/process/', '#faq': '/faq/', '#contact': '/contact/', '#why': '/' };
+  if ((location.pathname === '/' || location.pathname === '/index.html') && OLD[location.hash] && OLD[location.hash] !== '/') {
+    location.replace(OLD[location.hash]);
+    return;
+  }
+
   // mobile menu
   const toggle = document.querySelector('.nav__toggle');
   const links = document.querySelector('.nav__links');
@@ -20,7 +27,7 @@
   if (y) y.textContent = new Date().getFullYear();
 
   // reveal on scroll
-  const els = document.querySelectorAll('.section h2, .card, .service, .feat, .gallery figure, .process li, .feature, .faq details, .band__inner > *');
+  const els = document.querySelectorAll('.section h2, .card, .service, .feat, .gallery figure, .process li, .feature, .faq details, .band__inner > *, .tile, .case, .next__link, .steps li');
   if ('IntersectionObserver' in window && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
     const io = new IntersectionObserver((entries) => {
       entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
