@@ -13,6 +13,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0f1013">
 <link rel="icon" href="/img/favicon.png" type="image/png">
+<link rel="preload" as="image" href="/video/reel-honeyline.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
@@ -23,21 +24,21 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="gnav">
   <div class="gnav__in">
-    <a href="/" class="gnav__brand" aria-label="Virtualine home"><img src="/img/logo.png" alt="" width="25" height="40"><span>VIRTUALINE</span></a>
+    <a href="/" class="gnav__brand" aria-label="Virtualine home"><img src="/img/logo-sm.png" alt="" width="56" height="92"><span>VIRTUALINE</span></a>
+    <button class="gnav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     <nav class="gnav__links" id="menu" aria-label="Main">
-      <a href="/services/">What we do</a>
+      <a href="/services/">Services</a>
       <a href="/work/" aria-current="page">Our work</a>
       <a href="/samples/">Samples</a>
       <a href="/process/">How it works</a>
       <a href="/faq/">FAQ</a>
       <a href="/contact/" class="gnav__cta">Book a demo</a>
     </nav>
-    <button class="gnav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   </div>
 </header>
 <main id="main">
 <section class="hero" data-hero>
-  <div class="hero__media"><video class="" src="/video/reel-honeyline.mp4" poster="/video/reel-honeyline.jpg" autoplay muted loop playsinline preload="metadata" aria-label="HoneyLine packing line reel"></video></div>
+  <div class="hero__media"><video src="/video/reel-honeyline.mp4" poster="/video/reel-honeyline.jpg" autoplay muted loop playsinline preload="metadata" aria-label="HoneyLine packing line reel"></video></div>
   <div class="hero__shade" aria-hidden="true"></div>
   <div class="wrap hero__copy">
     <nav class="crumbs" aria-label="Breadcrumb"><a href="/work/">Our work</a> <span aria-hidden="true">/</span> <a href="/work/honeyline/">HoneyLine</a></nav>
@@ -73,49 +74,38 @@
   </div>
 </section>
 <section class="block">
-  <div class="wrap"><h2 class="h2" data-reveal>Eight machines, one line.</h2><p class="body" data-reveal>Click any machine for a closer look.</p></div>
-  <div class="wrap shots">
-    <button class="shot" data-reveal data-img="/img/case-erector.webp" data-caption="Case erector"><img src="/img/case-erector.webp" alt="Case erector" loading="lazy" width="1400" height="788"><span>Case erector</span></button>
-    <button class="shot" data-reveal data-img="/img/partition.webp" data-caption="Partition inserter"><img src="/img/partition.webp" alt="Partition inserter" loading="lazy" width="1400" height="788"><span>Partition inserter</span></button>
-    <button class="shot" data-reveal data-img="/img/pad.webp" data-caption="Case packer"><img src="/img/pad.webp" alt="Case packer" loading="lazy" width="1400" height="788"><span>Case packer</span></button>
-    <button class="shot" data-reveal data-img="/img/sealer.webp" data-caption="Case sealer"><img src="/img/sealer.webp" alt="Case sealer" loading="lazy" width="1400" height="788"><span>Case sealer</span></button>
-    <button class="shot" data-reveal data-img="/img/checkweigher.webp" data-caption="Checkweigher"><img src="/img/checkweigher.webp" alt="Checkweigher" loading="lazy" width="1400" height="788"><span>Checkweigher</span></button>
-    <button class="shot" data-reveal data-img="/img/robot.webp" data-caption="Palletiser"><img src="/img/robot.webp" alt="Palletiser" loading="lazy" width="1400" height="788"><span>Palletiser</span></button>
-    <button class="shot" data-reveal data-img="/img/palletiser.webp" data-caption="Palletising cell"><img src="/img/palletiser.webp" alt="Palletising cell" loading="lazy" width="1400" height="788"><span>Palletising cell</span></button>
-    <button class="shot" data-reveal data-img="/img/wrapper.webp" data-caption="Stretch wrapper"><img src="/img/wrapper.webp" alt="Stretch wrapper" loading="lazy" width="1400" height="788"><span>Stretch wrapper</span></button>
+  <div class="wrap"><h2 class="h2" data-reveal>Eight machines, one line.</h2><p class="body" data-reveal>Tap any machine for a closer look.</p></div>
+  <div class="wrap shots" data-reveal>
+    <button class="shot" data-group="hl" data-img="/img/case-erector.webp" data-caption="Case erector"><img src="/img/case-erector.webp" srcset="/img/sm/case-erector.webp 800w, /img/case-erector.webp 1400w" sizes="(min-width:1024px) 25vw, 50vw" alt="" width="1400" height="788" loading="lazy"><span>Case erector</span></button><button class="shot" data-group="hl" data-img="/img/partition.webp" data-caption="Partition inserter"><img src="/img/partition.webp" srcset="/img/sm/partition.webp 800w, /img/partition.webp 1400w" sizes="(min-width:1024px) 25vw, 50vw" alt="" width="1400" height="788" loading="lazy"><span>Partition inserter</span></button><button class="shot" data-group="hl" data-img="/img/pad.webp" data-caption="Case packer"><img src="/img/pad.webp" srcset="/img/sm/pad.webp 800w, /img/pad.webp 1400w" sizes="(min-width:1024px) 25vw, 50vw" alt="" width="1400" height="788" loading="lazy"><span>Case packer</span></button><button class="shot" data-group="hl" data-img="/img/sealer.webp" data-caption="Case sealer"><img src="/img/sealer.webp" srcset="/img/sm/sealer.webp 800w, /img/sealer.webp 1400w" sizes="(min-width:1024px) 25vw, 50vw" alt="" width="1400" height="788" loading="lazy"><span>Case sealer</span></button><button class="shot" data-group="hl" data-img="/img/checkweigher.webp" data-caption="Checkweigher"><img src="/img/checkweigher.webp" srcset="/img/sm/checkweigher.webp 800w, /img/checkweigher.webp 1400w" sizes="(min-width:1024px) 25vw, 50vw" alt="" width="1400" height="788" loading="lazy"><span>Checkweigher</span></button><button class="shot" data-group="hl" data-img="/img/robot.webp" data-caption="Palletiser"><img src="/img/robot.webp" srcset="/img/sm/robot.webp 800w, /img/robot.webp 1400w" sizes="(min-width:1024px) 25vw, 50vw" alt="" width="1400" height="788" loading="lazy"><span>Palletiser</span></button><button class="shot" data-group="hl" data-img="/img/palletiser.webp" data-caption="Palletising cell"><img src="/img/palletiser.webp" srcset="/img/sm/palletiser.webp 800w, /img/palletiser.webp 1400w" sizes="(min-width:1024px) 25vw, 50vw" alt="" width="1400" height="788" loading="lazy"><span>Palletising cell</span></button><button class="shot" data-group="hl" data-img="/img/wrapper.webp" data-caption="Stretch wrapper"><img src="/img/wrapper.webp" srcset="/img/sm/wrapper.webp 800w, /img/wrapper.webp 1400w" sizes="(min-width:1024px) 25vw, 50vw" alt="" width="1400" height="788" loading="lazy"><span>Stretch wrapper</span></button>
   </div>
 </section>
 <section class="block nextup">
-  <div class="wrap" data-reveal><a class="nextup__card" href="/work/pw-600/"><img src="/video/reel-pw600.jpg" alt="" loading="lazy" width="1400" height="788"><span class="nextup__txt"><span class="nextup__label">Next showcase</span><span class="nextup__title">PW-600 parts washer<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></div>
+  <div class="wrap" data-reveal><a class="nextup__card" href="/work/pw-600/"><img src="/video/reel-pw600.jpg" alt="" loading="lazy" width="1280" height="720"><span class="nextup__txt"><span class="nextup__label">Next</span><span class="nextup__title">PW-600 parts washer<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span></a></div>
 </section>
 <section class="block closing">
   <div class="closing__glow" aria-hidden="true"></div>
   <div class="wrap center" data-reveal>
     <h2 class="display">Got a show coming up?</h2>
     <p class="body">Tell us about your machine and the date. We reply within one working day.</p>
-    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="/samples/">Watch the samples<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
+    <div class="actions"><a class="btn" href="/contact/">Book a demo</a><a class="link" href="/process/">How it works<svg class="chev" viewBox="0 0 8 14" aria-hidden="true"><path d="M1 1l6 6-6 6" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg></a></div>
   </div>
 </section>
 
 </main>
 <footer class="foot">
   <div class="wrap foot__top">
-    <a href="/" class="foot__brand" aria-label="Virtualine home"><img src="/img/logo.png" alt="" width="34" height="55"><span>VIRTUALINE</span></a>
-    <p class="foot__big">Play the film.<br>Hand them the controller.</p>
-    <a class="btn" href="/contact/">Book a demo</a>
+    <a href="/" class="foot__brand" aria-label="Virtualine home"><img src="/img/logo-md.png" alt="" width="68" height="112"><span>VIRTUALINE</span></a>
+    <p class="foot__line">3D simulation, VR at your stand, promo films and operator training for UK machine builders.</p>
   </div>
   <div class="wrap foot__cols">
-    <div><h2>Explore</h2><a href="/services/">What we do</a><a href="/work/">Our work</a><a href="/samples/">Samples</a><a href="/process/">How it works</a></div>
-    <div><h2>Showcases</h2><a href="/work/pw-600/">PW-600 parts washer</a><a href="/work/honeyline/">HoneyLine packing line</a></div>
-    <div><h2>Help</h2><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></div>
+    <div><h2>Explore</h2><a href="/services/">Services</a><a href="/work/">Our work</a><a href="/samples/">Samples</a><a href="/process/">How it works</a></div>
+    <div><h2>Our work</h2><a href="/work/pw-600/">PW-600 parts washer</a><a href="/work/honeyline/">HoneyLine packing line</a></div>
+    <div><h2>Help</h2><a href="/faq/">FAQ</a><a href="/contact/">Book a demo</a></div>
     <div><h2>Email</h2><a href="mailto:sales@virtualine.co.uk">sales@virtualine.co.uk</a><a href="mailto:tech@virtualine.co.uk">tech@virtualine.co.uk</a></div>
   </div>
-  <p class="wrap foot__legal">© <span id="year">2026</span> Virtualine. Digital twins, VR and factory films, made in the UK.</p>
+  <p class="wrap foot__legal">© <span id="year">2026</span> Virtualine. Made in the UK.</p>
 </footer>
-<dialog class="lightbox" id="lightbox" aria-label="Media viewer"><button class="lightbox__close" aria-label="Close">×</button><div class="lightbox__body"></div><p class="lightbox__cap"></p></dialog>
-<script src="/vendor/gsap.min.js" defer></script>
-<script src="/vendor/ScrollTrigger.min.js" defer></script>
-<script src="/vendor/lenis.min.js" defer></script>
+<dialog class="lightbox" id="lightbox" aria-label="Picture viewer"><button class="lightbox__close" aria-label="Close">×</button><button class="lightbox__nav lightbox__prev" aria-label="Previous picture">‹</button><button class="lightbox__nav lightbox__next" aria-label="Next picture">›</button><div class="lightbox__body"></div><p class="lightbox__cap"></p></dialog>
 <script src="/main.js" defer></script>
 </body>
 </html>

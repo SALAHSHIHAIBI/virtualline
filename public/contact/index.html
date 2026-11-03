@@ -4,15 +4,16 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Book a demo | Virtualine</title>
-<meta name="description" content="Tell us about your machine and your next show. We reply within one working day.">
+<meta name="description" content="Request a demo: a video call where we open the PW-600 live, then look at your machine.">
 <link rel="canonical" href="https://virtualine.co.uk/contact/">
 <meta property="og:title" content="Book a demo | Virtualine">
-<meta property="og:description" content="Tell us about your machine and your next show. We reply within one working day.">
-<meta property="og:image" content="https://virtualine.co.uk/video/reel-pw600.jpg">
+<meta property="og:description" content="Request a demo: a video call where we open the PW-600 live, then look at your machine.">
+<meta property="og:image" content="https://virtualine.co.uk/img/team.webp">
 <meta property="og:url" content="https://virtualine.co.uk/contact/">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#0f1013">
 <link rel="icon" href="/img/favicon.png" type="image/png">
+<link rel="preload" as="image" href="/img/team.webp" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap" rel="stylesheet">
@@ -23,26 +24,26 @@
 <a class="skip" href="#main">Skip to content</a>
 <header class="gnav">
   <div class="gnav__in">
-    <a href="/" class="gnav__brand" aria-label="Virtualine home"><img src="/img/logo.png" alt="" width="25" height="40"><span>VIRTUALINE</span></a>
+    <a href="/" class="gnav__brand" aria-label="Virtualine home"><img src="/img/logo-sm.png" alt="" width="56" height="92"><span>VIRTUALINE</span></a>
+    <button class="gnav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
     <nav class="gnav__links" id="menu" aria-label="Main">
-      <a href="/services/">What we do</a>
+      <a href="/services/">Services</a>
       <a href="/work/">Our work</a>
       <a href="/samples/">Samples</a>
       <a href="/process/">How it works</a>
       <a href="/faq/">FAQ</a>
       <a href="/contact/" class="gnav__cta" aria-current="page">Book a demo</a>
     </nav>
-    <button class="gnav__toggle" aria-label="Menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
   </div>
 </header>
 <main id="main">
 <section class="block contactsec">
   <div class="wrap contact">
     <div class="contact__intro" data-reveal>
-      <h1 class="display">Let’s put your machine in VR.</h1>
-      <p class="body">Tell us about your machine and your next show. We reply within one working day.</p>
+      <h1 class="display">Request my demo.</h1>
+      <p class="body">A video call. We open the PW-600 live, then look at your machine with you and talk through what we could build.</p>
       <div class="contact__mail"><div><h2>Sales and quotes</h2><a href="mailto:sales@virtualine.co.uk">sales@virtualine.co.uk</a></div><div><h2>Technical support</h2><a href="mailto:tech@virtualine.co.uk">tech@virtualine.co.uk</a></div></div>
-      <video src="/video/reel-pw600.mp4" poster="/video/reel-pw600.jpg" autoplay muted loop playsinline preload="metadata" aria-label="PW-600 reel"></video>
+      <img src="/img/team.webp" srcset="/img/sm/team.webp 800w, /img/team.webp 1306w" sizes="(min-width:1024px) 45vw, 100vw" alt="Operator in Virtualine workwear on a safe walkway" width="1306" height="734" loading="lazy">
     </div>
     <form class="form" id="contact-form" action="https://api.virtualine.co.uk/contact" method="post" novalidate data-reveal>
       <div class="form__row">
@@ -53,14 +54,25 @@
         <label for="f-email">Email<input id="f-email" name="email" type="email" autocomplete="email" required maxlength="160"></label>
         <label for="f-phone"><span>Phone <span class="opt">(optional)</span></span><input id="f-phone" name="phone" type="tel" autocomplete="tel" maxlength="40"></label>
       </div>
-      <fieldset class="topic"><legend>What’s it about?</legend>
+      <div class="form__row">
+        <label for="f-show"><span>Next show and date <span class="opt">(optional)</span></span><input id="f-show" name="show" type="text" maxlength="120" placeholder="e.g. PPMA, Sept"></label>
+        <label for="f-have">What do you have?<select id="f-have" name="have"><option>CAD files</option><option>Drawings</option><option>Photos or video</option><option>Not sure yet</option></select></label>
+      </div>
+      <fieldset class="topic topic--4"><legend>What’s it for?</legend>
+        <label><input type="checkbox" name="for" value="VR at your stand"><span>VR at your stand</span></label>
+        <label><input type="checkbox" name="for" value="3D simulation"><span>3D simulation</span></label>
+        <label><input type="checkbox" name="for" value="Promo films"><span>Promo films</span></label>
+        <label><input type="checkbox" name="for" value="Operator training"><span>Operator training</span></label>
+      </fieldset>
+      <fieldset class="topic"><legend>Who should reply?</legend>
         <label><input type="radio" name="topic" value="sales" checked><span>Sales and quotes</span></label>
         <label><input type="radio" name="topic" value="tech"><span>Technical support</span></label>
       </fieldset>
-      <label for="f-msg">Message<textarea id="f-msg" name="message" rows="5" required maxlength="5000" placeholder="Which machine should visitors see working? Is there a show coming up?"></textarea></label>
+      <label for="f-msg">Message<textarea id="f-msg" name="message" rows="5" required maxlength="5000" placeholder="Which machine should visitors see working?"></textarea></label>
       <label class="hp" aria-hidden="true">Leave this empty<input name="website" type="text" tabindex="-1" autocomplete="off"></label>
       <input type="hidden" name="t" value="">
-      <button type="submit" class="btn btn--block">Send message</button>
+      <button type="submit" class="btn btn--block">Request my demo</button>
+      <p class="form__fine">No obligation. We reply within one working day.</p>
       <p class="form__status" role="status" aria-live="polite"></p>
     </form>
   </div>
@@ -69,22 +81,18 @@
 </main>
 <footer class="foot">
   <div class="wrap foot__top">
-    <a href="/" class="foot__brand" aria-label="Virtualine home"><img src="/img/logo.png" alt="" width="34" height="55"><span>VIRTUALINE</span></a>
-    <p class="foot__big">Play the film.<br>Hand them the controller.</p>
-    <a class="btn" href="/contact/">Book a demo</a>
+    <a href="/" class="foot__brand" aria-label="Virtualine home"><img src="/img/logo-md.png" alt="" width="68" height="112"><span>VIRTUALINE</span></a>
+    <p class="foot__line">3D simulation, VR at your stand, promo films and operator training for UK machine builders.</p>
   </div>
   <div class="wrap foot__cols">
-    <div><h2>Explore</h2><a href="/services/">What we do</a><a href="/work/">Our work</a><a href="/samples/">Samples</a><a href="/process/">How it works</a></div>
-    <div><h2>Showcases</h2><a href="/work/pw-600/">PW-600 parts washer</a><a href="/work/honeyline/">HoneyLine packing line</a></div>
-    <div><h2>Help</h2><a href="/faq/">FAQ</a><a href="/contact/">Contact</a></div>
+    <div><h2>Explore</h2><a href="/services/">Services</a><a href="/work/">Our work</a><a href="/samples/">Samples</a><a href="/process/">How it works</a></div>
+    <div><h2>Our work</h2><a href="/work/pw-600/">PW-600 parts washer</a><a href="/work/honeyline/">HoneyLine packing line</a></div>
+    <div><h2>Help</h2><a href="/faq/">FAQ</a><a href="/contact/">Book a demo</a></div>
     <div><h2>Email</h2><a href="mailto:sales@virtualine.co.uk">sales@virtualine.co.uk</a><a href="mailto:tech@virtualine.co.uk">tech@virtualine.co.uk</a></div>
   </div>
-  <p class="wrap foot__legal">© <span id="year">2026</span> Virtualine. Digital twins, VR and factory films, made in the UK.</p>
+  <p class="wrap foot__legal">© <span id="year">2026</span> Virtualine. Made in the UK.</p>
 </footer>
-<dialog class="lightbox" id="lightbox" aria-label="Media viewer"><button class="lightbox__close" aria-label="Close">×</button><div class="lightbox__body"></div><p class="lightbox__cap"></p></dialog>
-<script src="/vendor/gsap.min.js" defer></script>
-<script src="/vendor/ScrollTrigger.min.js" defer></script>
-<script src="/vendor/lenis.min.js" defer></script>
+<dialog class="lightbox" id="lightbox" aria-label="Picture viewer"><button class="lightbox__close" aria-label="Close">×</button><button class="lightbox__nav lightbox__prev" aria-label="Previous picture">‹</button><button class="lightbox__nav lightbox__next" aria-label="Next picture">›</button><div class="lightbox__body"></div><p class="lightbox__cap"></p></dialog>
 <script src="/main.js" defer></script>
 </body>
 </html>
