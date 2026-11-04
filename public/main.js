@@ -343,6 +343,42 @@
     sync();
   });
 
+  // ---------- customer journey: plays step by step while on screen ----------
+  $$('[data-journey]').forEach((root) => {
+    const steps = $$('[data-jstep]', root), panels = $$('.jpanel', root);
+    let cur = 0, started = false;
+    const restart = (el) => { el.classList.remove('is-on'); void el.offsetWidth; el.classList.add('is-on'); };
+    const go = (i) => {
+      cur = (i + steps.length) % steps.length;
+      steps.forEach((b, n) => { b.classList.toggle('is-done', n < cur); b.setAttribute('aria-selected', String(n === cur)); b.tabIndex = n === cur ? 0 : -1; if (n !== cur) b.classList.remove('is-on'); });
+      panels.forEach((p, n) => { p.hidden = n !== cur; if (n !== cur) p.classList.remove('is-on'); });
+      restart(steps[cur]); restart(panels[cur]);
+    };
+    if (reduce) root.classList.add('is-manual');
+    root.addEventListener('animationend', (e) => {
+      if (e.animationName === 'jfill' && !root.classList.contains('is-manual')) go(cur + 1);
+    });
+    steps.forEach((b, i) => {
+      b.addEventListener('click', () => { root.classList.add('is-manual'); go(i); });
+      b.addEventListener('keydown', (e) => {
+        const d = (e.key === 'ArrowDown' || e.key === 'ArrowRight') ? 1 : (e.key === 'ArrowUp' || e.key === 'ArrowLeft') ? -1 : 0;
+        if (d) { e.preventDefault(); root.classList.add('is-manual'); go(cur + d); steps[cur].focus(); }
+      });
+    });
+    let hover = false, seen = false;
+    const pause = () => root.classList.toggle('is-paused', hover || !seen);
+    root.addEventListener('mouseenter', () => { hover = true; pause(); });
+    root.addEventListener('mouseleave', () => { hover = false; pause(); });
+    new IntersectionObserver(([e]) => {
+      seen = e.isIntersecting && e.intersectionRatio >= 0.35;
+      if (seen && !started) { started = true; go(0); }
+      pause();
+    }, { threshold: [0, 0.35] }).observe(root);
+    steps.forEach((b, n) => { b.tabIndex = n === 0 ? 0 : -1; });
+    steps[0].classList.remove('is-on'); panels[0].classList.remove('is-on');
+    root.classList.add('is-paused');
+  });
+
   // ---------- contact form ----------
   const form = $('#contact-form');
   if (!form) return;

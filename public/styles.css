@@ -779,3 +779,143 @@ html:not(.js) .walk__stage { height: auto; min-height: 100svh; }
 
 .closing{overflow:clip}
 html,body{overflow-x:clip}
+
+/* =================== v7: customer journey, range, no repeats =================== */
+.journey { background: var(--bg-2); }
+.jgrid { display: grid; grid-template-columns: minmax(300px, 5fr) 7fr; gap: clamp(24px, 4vw, 56px); margin-top: clamp(36px, 5vw, 56px); align-items: start; }
+.jsteps { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.jstep { position: relative; width: 100%; text-align: left; display: grid; grid-template-columns: 40px 1fr; gap: 4px 14px; padding: 18px 20px 22px; border-radius: var(--r-md); border: 1px solid var(--line); background: transparent; color: var(--fg); cursor: pointer; font: inherit; overflow: hidden; transition: background .4s var(--ease), border-color .4s; }
+.jstep:hover { border-color: rgba(255,255,255,.22); }
+.jstep__n { grid-row: span 3; width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; font-weight: 650; border: 1px solid var(--line); color: var(--fg-2); transition: background .4s, color .4s, border-color .4s; }
+.jstep__t { font-weight: 650; font-size: 1.15rem; letter-spacing: -0.01em; align-self: center; }
+.jstep__who { display: none; font-size: .95rem; color: var(--fg-2); line-height: 1.45; }
+.jstep__who b { color: var(--fg); font-weight: 600; margin-right: 6px; }
+.jstep.is-on { background: var(--panel); border-color: rgba(198,255,61,.35); }
+.jstep.is-on .jstep__n { background: var(--volt); border-color: var(--volt); color: #111214; }
+.jstep.is-on .jstep__who { display: block; animation: jfade .5s var(--ease) both; }
+.jstep.is-on .jstep__who + .jstep__who { animation-delay: .12s; }
+.jstep.is-done .jstep__n { color: var(--volt); border-color: rgba(198,255,61,.4); }
+.jstep__bar { position: absolute; left: 0; bottom: 0; height: 3px; width: 100%; background: rgba(255,255,255,.06); }
+.jstep__bar::after { content: ""; position: absolute; inset: 0; transform-origin: left; transform: scaleX(0); background: var(--volt); }
+.jstep.is-on .jstep__bar::after { animation: jfill 6.5s linear forwards; }
+[data-journey].is-paused .jstep.is-on .jstep__bar::after { animation-play-state: paused; }
+[data-journey].is-manual .jstep.is-on .jstep__bar::after { animation: none; transform: scaleX(1); }
+@keyframes jfill { to { transform: scaleX(1); } }
+@keyframes jfade { from { opacity: 0; translate: 0 6px; } }
+
+.jstage { position: relative; aspect-ratio: 16 / 10.5; border-radius: var(--r-lg); background: #0b0c0e; border: 1px solid var(--line); overflow: hidden; }
+.jpanel { position: absolute; inset: 0; }
+.jpanel[hidden] { display: block; visibility: hidden; opacity: 0; }
+.jpanel { transition: opacity .6s var(--ease), visibility .6s; }
+.jpanel img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* 1 send: files fly into the tray */
+.jsend { position: absolute; inset: 0; display: grid; place-items: center; background: radial-gradient(60% 60% at 50% 60%, rgba(198,255,61,.07), transparent 70%); }
+.jsend__files { position: absolute; top: 12%; left: 0; right: 0; display: flex; justify-content: center; gap: 14px; }
+.jfile { width: clamp(92px, 12vw, 128px); aspect-ratio: 4 / 5; border-radius: 12px; background: var(--panel); border: 1px solid rgba(255,255,255,.14); display: grid; align-content: space-between; padding: 12px; box-shadow: 0 18px 40px rgba(0,0,0,.45); }
+.jfile b { font-size: .8rem; letter-spacing: .06em; color: #111214; background: var(--volt); justify-self: start; padding: 3px 7px; border-radius: 6px; }
+.jfile em { font-style: normal; font-size: .72rem; color: var(--fg-2); word-break: break-all; line-height: 1.3; }
+.jfile--1 b { background: #fff; } .jfile--2 b { background: #8fd3ff; }
+.jsend__tray { position: absolute; bottom: 14%; width: min(78%, 420px); padding: 18px 20px; border-radius: 16px; background: var(--panel); border: 1px dashed rgba(198,255,61,.5); display: grid; grid-template-columns: 34px 1fr; gap: 8px 12px; align-items: center; }
+.jsend__icon { width: 34px; height: 34px; border-radius: 10px; background: rgba(198,255,61,.14); grid-row: span 2; position: relative; }
+.jsend__icon::before { content: ""; position: absolute; left: 50%; top: 9px; width: 2px; height: 14px; background: var(--volt); translate: -50% 0; }
+.jsend__icon::after { content: ""; position: absolute; left: 50%; top: 8px; width: 9px; height: 9px; border-left: 2px solid var(--volt); border-top: 2px solid var(--volt); translate: -50% 0; rotate: 45deg; }
+.jsend__label { font-weight: 600; font-size: .95rem; }
+.jsend__prog { height: 6px; border-radius: 6px; background: rgba(255,255,255,.08); overflow: hidden; }
+.jsend__prog i { display: block; height: 100%; width: 100%; background: var(--volt); transform-origin: left; transform: scaleX(0); }
+.jsend__ok { grid-column: 1 / -1; color: var(--volt); font-weight: 600; font-size: .92rem; opacity: 0; }
+.jsend__date { position: absolute; top: 7%; right: 6%; font-size: .8rem; padding: 6px 12px; border-radius: 999px; background: rgba(255,255,255,.06); border: 1px solid var(--line); color: var(--fg-2); opacity: 0; }
+.jsend__date b { color: var(--fg); }
+.jp-send.is-on .jfile { animation: jdrop 1.3s var(--ease) both; }
+.jp-send.is-on .jfile--1 { animation-delay: .35s; } .jp-send.is-on .jfile--2 { animation-delay: .7s; }
+.jp-send.is-on .jsend__prog i { animation: jprog 2.2s .9s var(--ease) forwards; }
+.jp-send.is-on .jsend__ok { animation: jfade .5s 3.2s var(--ease) forwards; }
+.jp-send.is-on .jsend__date { animation: jfade .5s 3.6s var(--ease) forwards; }
+.jp-send.is-on .jsend__tray { animation: jglow 1s 3.1s ease both; }
+@keyframes jdrop { 0% { opacity: 0; transform: translateY(-40px) rotate(-6deg); } 35% { opacity: 1; transform: none; } 70% { opacity: 1; transform: translateY(0); } 100% { opacity: .0; transform: translateY(150px) scale(.4); } }
+@keyframes jprog { to { transform: scaleX(1); } }
+@keyframes jglow { 50% { box-shadow: 0 0 0 6px rgba(198,255,61,.18); border-style: solid; } 100% { border-style: solid; } }
+
+/* 2 build: wireframe wipes into the finished twin */
+.jbuild { position: absolute; inset: 0; }
+.jbuild__done { position: absolute; inset: 0; clip-path: inset(0 100% 0 0); }
+.jbuild__scan { position: absolute; top: 0; bottom: 0; left: 0; width: 2px; background: var(--volt); box-shadow: 0 0 18px 4px rgba(198,255,61,.55); opacity: 0; }
+.jtag { position: absolute; bottom: 16px; padding: 6px 12px; border-radius: 999px; font-size: .82rem; font-weight: 600; background: rgba(15,16,19,.8); backdrop-filter: blur(6px); }
+.jtag--a { left: 16px; } .jtag--b { right: 16px; color: var(--volt); opacity: 0; }
+.jp-build.is-on .jbuild__done { animation: jwipe 3.6s .6s cubic-bezier(.65,0,.35,1) forwards; }
+.jp-build.is-on .jbuild__scan { animation: jscan 3.6s .6s cubic-bezier(.65,0,.35,1) forwards; }
+.jp-build.is-on .jtag--b { animation: jfade .5s 4s var(--ease) forwards; }
+.jp-build.is-on .jtag--a { animation: jout .4s 3.8s forwards; }
+@keyframes jwipe { to { clip-path: inset(0 0 0 0); } }
+@keyframes jscan { 0% { left: 0; opacity: 1; } 95% { left: 100%; opacity: 1; } 100% { left: 100%; opacity: 0; } }
+@keyframes jout { to { opacity: 0; } }
+
+/* 3 review: browser with comment pins that get resolved */
+.jbrowser { position: absolute; inset: 14px; border-radius: 14px; overflow: hidden; background: var(--panel); border: 1px solid rgba(255,255,255,.14); display: grid; grid-template-rows: auto 1fr; }
+.jbrowser__bar { display: flex; align-items: center; gap: 6px; padding: 9px 12px; background: #23252b; }
+.jbrowser__bar i { width: 10px; height: 10px; border-radius: 50%; background: rgba(255,255,255,.18); }
+.jbrowser__bar span { margin-left: 10px; flex: 1; font-size: .74rem; color: var(--fg-2); background: rgba(0,0,0,.3); padding: 4px 10px; border-radius: 6px; overflow: hidden; white-space: nowrap; text-overflow: ellipsis; }
+.jbrowser__view { position: relative; overflow: hidden; }
+.jp-review.is-on .jbrowser__view img { animation: jorbit 7s ease-in-out both; }
+@keyframes jorbit { 0% { transform: scale(1.12) translateX(3%); } 100% { transform: scale(1.02) translateX(-1%); } }
+.jpin { position: absolute; display: flex; align-items: center; gap: 8px; opacity: 0; }
+.jpin i { font-style: normal; width: 28px; height: 28px; flex: none; border-radius: 50% 50% 50% 4px; display: grid; place-items: center; background: var(--amber); color: #111; font-weight: 700; font-size: .8rem; box-shadow: 0 6px 16px rgba(0,0,0,.4); transition: background .3s; }
+.jpin em { font-style: normal; font-size: .8rem; background: rgba(15,16,19,.88); padding: 6px 10px; border-radius: 8px; white-space: nowrap; backdrop-filter: blur(6px); }
+.jpin--1 { left: 18%; top: 22%; } .jpin--2 { left: 52%; top: 12%; } .jpin--3 { left: 58%; top: 68%; }
+.jp-review.is-on .jpin { animation: jpop .5s var(--ease) forwards; }
+.jp-review.is-on .jpin--1 { animation-delay: .6s; } .jp-review.is-on .jpin--2 { animation-delay: 1.3s; } .jp-review.is-on .jpin--3 { animation-delay: 2s; }
+.jp-review.is-on .jpin i { animation: jresolve .4s forwards; }
+.jp-review.is-on .jpin--1 i { animation-delay: 3.4s; } .jp-review.is-on .jpin--2 i { animation-delay: 3.9s; } .jp-review.is-on .jpin--3 i { animation-delay: 4.4s; }
+.jp-review.is-on .jpin em { animation: jstrike .4s forwards; }
+.jp-review.is-on .jpin--1 em { animation-delay: 3.4s; } .jp-review.is-on .jpin--2 em { animation-delay: 3.9s; } .jp-review.is-on .jpin--3 em { animation-delay: 4.4s; }
+@keyframes jpop { from { opacity: 0; transform: translateY(8px) scale(.8); } to { opacity: 1; transform: none; } }
+@keyframes jresolve { to { background: var(--volt); color: transparent; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20'%3E%3Cpath d='M5 10.5l3.2 3L15 7' fill='none' stroke='%23111' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); background-size: 18px; background-position: center; background-repeat: no-repeat; } }
+@keyframes jstrike { to { text-decoration: line-through; color: var(--fg-2); } }
+
+/* 4 use: the stand, and where else it goes */
+.juse { position: absolute; inset: 0; }
+.jp-use.is-on .juse img { animation: jzoom 7s ease-out both; }
+@keyframes jzoom { from { transform: scale(1.14); } to { transform: scale(1); } }
+.jchip { position: absolute; left: 18px; padding: 8px 14px; border-radius: 999px; font-weight: 600; font-size: .9rem; background: rgba(15,16,19,.85); border: 1px solid rgba(198,255,61,.4); backdrop-filter: blur(6px); opacity: 0; }
+.jchip--1 { bottom: 110px; } .jchip--2 { bottom: 64px; } .jchip--3 { bottom: 18px; }
+.jp-use.is-on .jchip { animation: jpop .5s var(--ease) forwards; }
+.jp-use.is-on .jchip--1 { animation-delay: .8s; } .jp-use.is-on .jchip--2 { animation-delay: 1.4s; } .jp-use.is-on .jchip--3 { animation-delay: 2s; }
+
+/* range of machines (Blender renders) */
+.rgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: clamp(36px, 5vw, 56px); }
+.rgrid .rcard { aspect-ratio: 4 / 3.4; border-radius: var(--r-lg); text-align: left; color: var(--fg); }
+.rgrid .rcard:first-child { grid-column: span 2; aspect-ratio: auto; }
+.rcard::after { content: ""; position: absolute; inset: 0; background: linear-gradient(0deg, rgba(15,16,19,.92) 8%, rgba(15,16,19,0) 55%); pointer-events: none; }
+.shot .rcard__txt { position: absolute; left: 0; right: 0; top: auto; bottom: 0; z-index: 1; padding: 20px 22px; background: none; border-radius: 0; backdrop-filter: none; display: grid; gap: 4px; font-size: 1rem; font-weight: 400; }
+.rcard__txt strong { font-size: 1.25rem; font-weight: 650; letter-spacing: -0.01em; }
+.rcard__txt em { font-style: normal; color: rgba(243,243,239,.72); font-size: .95rem; line-height: 1.4; }
+.reels--2 { grid-template-columns: 1fr 1fr; }
+.reels--2 .reel { aspect-ratio: 16 / 11; }
+.reel--range { background: radial-gradient(80% 90% at 80% 10%, rgba(198,255,61,.14), transparent 60%), var(--panel); border: 1px solid var(--line); text-decoration: none; }
+.reel--range::after { display: none; }
+.reel--range .reel__h { font-size: clamp(1.6rem, 2.8vw, 2.4rem); max-width: 18ch; }
+.reel--range .reel__txt { gap: 12px; padding: clamp(24px, 3vw, 36px); }
+
+@media (max-width: 960px) {
+  .jgrid { grid-template-columns: 1fr; }
+  .jstage { order: -1; aspect-ratio: 4 / 3.3; }
+  .jsteps { grid-template-columns: 1fr; }
+  .rgrid { grid-template-columns: 1fr 1fr; }
+  .rgrid .rcard:first-child { grid-column: 1 / -1; aspect-ratio: 16 / 10; }
+}
+@media (max-width: 620px) {
+  .rgrid, .reels--2 { grid-template-columns: 1fr; }
+  .rgrid .rcard { aspect-ratio: 16 / 11; }
+  .jpin em { display: none; }
+  .jchip { font-size: .8rem; }
+  .jchip--1 { bottom: 96px; } .jchip--2 { bottom: 56px; }
+  .jfile { width: 84px; padding: 9px; } .jfile em { font-size: .64rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .jpanel *, .jpanel { animation: none !important; transition: none !important; }
+  .jbuild__done { clip-path: inset(0 0 0 50%); }
+  .jbuild__scan { left: 50%; opacity: 1; }
+  .jfile, .jsend__ok, .jsend__date, .jpin, .jchip, .jtag--b { opacity: 1; }
+  .jsend__prog i { transform: none; }
+  .jstep__bar::after { animation: none !important; }
+}
