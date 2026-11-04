@@ -379,6 +379,84 @@
     root.classList.add('is-paused');
   });
 
+  // ---------- full films from YouTube ----------
+  // Nothing loads from YouTube until someone presses play. Then the privacy-enhanced
+  // player (youtube-nocookie.com) replaces the poster, and when the film ends a
+  // "Book a demo" panel appears over it.
+  const FILMS = {
+    hl: { id: '6GGs0G_H2Iw', name: 'HoneyLine', q: 'Want your line filmed like this?' },
+    pw: { id: 'QqLti2BNhuA', name: 'PW-600', q: 'Want your machine filmed like this?' },
+  };
+  let ytReady = null;
+  const loadYT = () => ytReady || (ytReady = new Promise((ok, fail) => {
+    if (window.YT && YT.Player) return ok(YT);
+    const prev = window.onYouTubeIframeAPIReady;
+    window.onYouTubeIframeAPIReady = () => { if (prev) prev(); ok(YT); };
+    const s = document.createElement('script');
+    s.src = 'https://www.youtube.com/iframe_api'; s.onerror = fail;
+    document.head.append(s);
+    setTimeout(() => fail(new Error('timeout')), 6000);
+  }).catch((e) => { ytReady = null; throw e; }));
+
+  const endPanel = (root) => {
+    let end = $('.film__end', root);
+    if (end) return end;
+    end = document.createElement('div');
+    end.className = 'film__end'; end.hidden = true;
+    end.innerHTML = `<p class="film__q"></p><p class="film__sub">We build films like this from your CAD, along with VR and training.</p>
+      <div class="actions"><a class="btn" href="/contact/">Book a demo</a><button class="link film__replay" type="button">Watch again</button></div>`;
+    $('.film__q', end).textContent = root.dataset.q || 'Want your machine filmed like this?';
+    root.append(end);
+    return end;
+  };
+  const playFilm = (root) => {
+    if (root.classList.contains('is-on')) return;
+    root.classList.add('is-on', 'is-loading');
+    const frame = document.createElement('div');
+    frame.className = 'film__frame';
+    const slot = document.createElement('div');
+    frame.append(slot); root.append(frame);
+    const end = endPanel(root);
+    const id = root.dataset.film;
+    loadYT().then((YT) => {
+      const player = new YT.Player(slot, {
+        host: 'https://www.youtube-nocookie.com', videoId: id,
+        playerVars: { autoplay: 1, rel: 0, playsinline: 1, modestbranding: 1, cc_load_policy: 0 },
+        events: {
+          onReady: (e) => { root.classList.remove('is-loading'); e.target.playVideo(); $('iframe', frame).title = (root.dataset.name || '') + ' film'; },
+          onStateChange: (e) => {
+            if (e.data === YT.PlayerState.ENDED) { end.hidden = false; $('.btn', end).focus({ preventScroll: true }); }
+            if (e.data === YT.PlayerState.PLAYING) end.hidden = true;
+          },
+        },
+      });
+      root._player = player;
+      $('.film__replay', end).onclick = () => { end.hidden = true; player.seekTo(0); player.playVideo(); };
+    }).catch(() => {
+      // API blocked or slow: fall back to a plain embed (no end panel)
+      root.classList.remove('is-loading');
+      slot.outerHTML = `<iframe src="https://www.youtube-nocookie.com/embed/${id}?autoplay=1&rel=0&playsinline=1" title="${root.dataset.name || ''} film" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen></iframe>`;
+    });
+  };
+  $$('[data-film]').forEach((root) => $('.film__start', root).addEventListener('click', () => playFilm(root)));
+
+  // pop-up player (homepage hero)
+  const fbox = $('#filmbox');
+  if (fbox) {
+    const body = $('.filmbox__body', fbox);
+    $$('[data-film-open]').forEach((b) => b.addEventListener('click', () => {
+      const f = FILMS[b.dataset.filmOpen]; if (!f) return;
+      const root = document.createElement('div');
+      root.className = 'film film--box'; root.dataset.film = f.id; root.dataset.name = f.name; root.dataset.q = f.q;
+      body.replaceChildren(root);
+      fbox.setAttribute('aria-label', f.name + ' film');
+      fbox.showModal(); playFilm(root);
+    }));
+    $('.filmbox__close', fbox).addEventListener('click', () => fbox.close());
+    fbox.addEventListener('click', (e) => { if (e.target === fbox) fbox.close(); });
+    fbox.addEventListener('close', () => { const r = $('.film', body); if (r && r._player) r._player.destroy(); body.replaceChildren(); });
+  }
+
   // ---------- contact form ----------
   const form = $('#contact-form');
   if (!form) return;
