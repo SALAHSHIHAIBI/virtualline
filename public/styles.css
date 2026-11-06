@@ -1,4 +1,4 @@
-/* Virtualine — cinematic site
+/* Ahylon — cinematic site
    Dark stage, renders full-bleed, volt as the light that marks what's live.
    Motion: hero settles in, pinned scenes hold the screen while scroll moves the story. */
 :root {
@@ -971,3 +971,24 @@ html,body{overflow-x:clip}
   .film__meta em { font-size: .8rem; }
 }
 @media (max-width: 600px) { .filmbox__close { top: -52px; } }
+
+/* ===== Ahylon brand (brand guidelines v1.1, Nov 2026) ===== */
+:root {
+  --bg: #0E0F12; --bg-2: #14161A; --panel: #1A1D22; --fg: #F4F5F2; --fg-2: #9CA0A6; --volt: #C6FF3D;
+  --font: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --font-head: "Unbounded", "Instrument Sans", system-ui, sans-serif;
+}
+body { font-family: var(--font); }
+.display, .h2, .hero__title, .statement__text, .walk__count, .walk__step h3, .hmi__count, .hmi__v, .stats strong, .tile__h, .spots__card h3, .points h3, .steps li::before, .steps h2, .case__h, .nextup__title, .foot__big, .marquee span, .pf__problem h3, .calc__total, .wash__stage, .wash__v { font-family: var(--font-head); font-weight: 700; font-stretch: normal; letter-spacing: -0.02em; }
+.hero__title { font-size: clamp(2.3rem, 7.2vw, 6.4rem); line-height: .98; }
+.display { font-size: clamp(2rem, 5vw, 4.2rem); }
+.h2 { font-size: clamp(1.7rem, 3.6vw, 3rem); line-height: 1.05; max-width: 20ch; }
+.statement__text { font-size: clamp(1.5rem, 3.2vw, 2.8rem); line-height: 1.15; }
+.walk__step h3, .case__h, .nextup__title, .foot__big { font-size: clamp(1.7rem, 3.4vw, 3rem); }
+.stats strong, .steps li::before { font-size: clamp(2.8rem, 6vw, 5rem); }
+.calc__total { font-size: clamp(2.8rem, 7vw, 5.6rem); }
+.tile__h, .spots__card h3, .pf__problem h3, .marquee span { font-size: clamp(1.2rem, 1.9vw, 1.7rem); }
+.hero__kicker, .case__k, .pf__label, .hmi__bar, .wash__bar { text-transform: uppercase; letter-spacing: .14em; font-size: .78rem; }
+.gnav__brand img { height: 34px; width: auto; filter: none; }
+.foot__brand img { height: 48px; width: auto; }
+.foot__tag { flex-basis: 100%; margin-top: -6px; color: var(--volt); text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; }
