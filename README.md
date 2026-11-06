@@ -1,5 +1,7 @@
 # Virtualine website
 
+> Repo: **ahylon-uk/website** (moved from Salah's personal account, Nov 2026). The site moves to **ahylon.co.uk** as part of the Ahylon rebrand (Trello: Rebrand 5 website).
+
 The site for **virtualine.co.uk**: digital twins, VR stand experiences, operator training and promo films.
 The older spelling **virtualline.co.uk** still works: web visits redirect to virtualine.co.uk and its email addresses keep forwarding.
 
@@ -17,7 +19,7 @@ The older spelling **virtualline.co.uk** still works: web visits redirect to vir
   `[Sales]` or `[Tech]`, and pressing **Reply** in Gmail answers the visitor directly.
 - **DNS (Cloudflare, virtualine.co.uk):** the apex has A records for GitHub Pages
   (185.199.108.153, 185.199.109.153, 185.199.110.153, 185.199.111.153), `www` is a CNAME to
-  `salahshihaibi.github.io` (both DNS only), and `api` is the Worker's custom domain.
+  `ahylon-uk.github.io` (both DNS only), and `api` is the Worker's custom domain.
 
 ## Editing the site
 
