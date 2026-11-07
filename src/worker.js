@@ -1,29 +1,34 @@
-// Virtualine contact form API (Cloudflare Worker at https://api.virtualine.co.uk,
-// also reachable at the old https://api.virtualline.co.uk)
+// Ahylon contact form API (Cloudflare Worker at https://api.ahylon.co.uk,
+// also reachable at the old https://api.virtualine.co.uk and https://api.virtualline.co.uk)
 // The website itself is hosted on GitHub Pages. The form POSTs here, and this Worker
 // emails the enquiry to the inbox via Cloudflare Email Routing (send_email binding).
 //
 // Dashboard setup: Worker "virtualline-contact"
 //   Settings > Bindings > Send email:  name CONTACT_EMAIL, destination virtualline35@gmail.com
-//   Settings > Domains & Routes:      custom domains api.virtualine.co.uk and api.virtualline.co.uk
+//   Settings > Domains & Routes:      custom domains api.ahylon.co.uk, api.virtualine.co.uk and api.virtualline.co.uk
 
 import { EmailMessage } from "cloudflare:email";
 
 const TO = "virtualline35@gmail.com";
-const FROM = "website@virtualine.co.uk";
-const FROM_NAME = "Virtualine Website";
+const FROM = "website@ahylon.co.uk";
+const FROM_NAME = "Ahylon Website";
 const ALLOWED_ORIGINS = [
+  "https://ahylon.co.uk",
+  "https://www.ahylon.co.uk",
   "https://virtualine.co.uk",
   "https://www.virtualine.co.uk",
   "https://virtualline.co.uk",
   "https://www.virtualline.co.uk",
   "https://salahshihaibi.github.io",
+  "https://ahylon-uk.github.io",
+  "http://localhost:8765",
+  "http://127.0.0.1:8765",
   "http://localhost:8787",
   "http://127.0.0.1:8787",
 ];
 const TOPICS = {
-  sales: { label: "Sales", alias: "sales@virtualine.co.uk" },
-  tech: { label: "Tech", alias: "tech@virtualine.co.uk" },
+  sales: { label: "Sales", alias: "sales@ahylon.co.uk" },
+  tech: { label: "Tech", alias: "tech@ahylon.co.uk" },
 };
 
 export default {
@@ -74,7 +79,7 @@ async function handleContact(request, env, cors) {
   const tp = TOPICS[topic];
   const subject = `[${tp.label}] Website enquiry from ${name}${company ? " (" + company + ")" : ""}`;
   const body = [
-    `New ${tp.label.toLowerCase()} enquiry from virtualine.co.uk`,
+    `New ${tp.label.toLowerCase()} enquiry from ahylon.co.uk`,
     `(sent to ${tp.alias})`,
     "",
     `Name:    ${name}`,
@@ -107,7 +112,7 @@ async function handleContact(request, env, cors) {
 }
 
 function buildMime({ from, to, replyTo, subject, body }) {
-  const id = `${crypto.randomUUID()}@virtualine.co.uk`;
+  const id = `${crypto.randomUUID()}@ahylon.co.uk`;
   return [
     `From: ${from}`,
     `To: ${to}`,

@@ -1,12 +1,12 @@
 (() => {
-  const API = 'https://api.virtualine.co.uk/contact';   // Cloudflare Worker, see src/worker.js
+  const API = 'https://api.ahylon.co.uk/contact';   // Cloudflare Worker, see src/worker.js
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
   const $ = (s, r = document) => r.querySelector(s);
   const $$ = (s, r = document) => Array.from(r.querySelectorAll(s));
   const gbp = (n) => '£' + Math.round(n).toLocaleString('en-GB');
   const smooth = reduce ? 'auto' : 'smooth';
 
-  // Old one-page links (virtualine.co.uk/#contact etc.) go to their new pages
+  // Old one-page links (ahylon.co.uk/#contact etc.) go to their new pages
   const OLD = { '#services': '/services/', '#work': '/work/', '#process': '/process/', '#faq': '/faq/', '#contact': '/contact/' };
   if ((location.pathname === '/' || location.pathname === '/index.html') && OLD[location.hash]) { location.replace(OLD[location.hash]); return; }
 
@@ -496,7 +496,7 @@
       form.classList.add('sent');
       form.innerHTML = '<div class="sent__icon" aria-hidden="true"></div><h3>Demo requested.</h3><p>It’s with ' + to + '. We’ll reply within one working day.</p>';
     } catch (err) {
-      setStatus(err.message + ' You can also email sales@virtualine.co.uk.', 'err');
+      setStatus(err.message + ' You can also email sales@ahylon.co.uk.', 'err');
       btn.disabled = false; btn.textContent = 'Request my demo';
     }
   });
