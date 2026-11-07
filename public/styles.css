@@ -992,3 +992,11 @@ body { font-family: var(--font); }
 .gnav__brand img { height: 34px; width: auto; filter: none; }
 .foot__brand img { height: 48px; width: auto; }
 .foot__tag { flex-basis: 100%; margin-top: -6px; color: var(--volt); text-transform: uppercase; letter-spacing: .18em; font-size: .78rem; }
+
+/* ===== Ahylon brand v1.1 checks: logo never on busy images, headlines in Unbounded, labels in wide-spaced capitals ===== */
+.gnav, .gnav.is-solid { background: rgba(14,15,18,.94); backdrop-filter: saturate(160%) blur(18px); -webkit-backdrop-filter: saturate(160%) blur(18px); border-color: var(--line); }
+.faq summary, .pt__svc, .steps h3, .form.sent h3 { font-family: var(--font-head); font-weight: 700; font-stretch: normal; letter-spacing: -0.015em; }
+.faq summary { font-size: clamp(1.05rem, 1.8vw, 1.4rem); }
+.pt__svc { font-size: 1.3rem; }
+.contact__mail h2, .foot__cols h2, .walk__heading, .pt__save b { font-family: var(--font); text-transform: uppercase; letter-spacing: .16em; font-size: .74rem; font-weight: 500; color: var(--fg-2); }
+.gnav__cta, .btn { font-family: var(--font); font-weight: 600; }
